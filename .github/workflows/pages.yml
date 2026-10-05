@@ -24,13 +24,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Build public site
+        shell: bash
+        run: |
+          mkdir -p _site/app _site/benchmark/v0.1
+          cp web/index.html _site/app/index.html
+          cp benchmark/v0.1/questions.json _site/benchmark/v0.1/questions.json
+          cp benchmark/v0.1/anchors.json _site/benchmark/v0.1/anchors.json
+          cp index.html _site/index.html
+          touch _site/.nojekyll
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload site
+      - name: Upload public site only
         uses: actions/upload-pages-artifact@v4
         with:
-          path: .
+          path: _site
 
       - name: Deploy
         id: deployment
