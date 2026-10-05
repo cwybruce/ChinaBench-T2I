@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ChinaBench-T2I V0.1</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#17191c;--muted:#69707d;--line:#e2e5ea;--accent:#a11d1d;--soft:#f7ecec}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--text)}
+header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);padding:16px 22px}
+h1{margin:0;font-size:22px}.sub{color:var(--muted);font-size:13px;margin-top:5px}
+.toolbar{display:grid;grid-template-columns:repeat(5,minmax(120px,1fr));gap:10px;margin-top:14px}
+input,select,button,textarea{font:inherit;border:1px solid var(--line);border-radius:8px;padding:9px;background:#fff}
+button{cursor:pointer}button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+main{max-width:1280px;margin:20px auto;padding:0 18px 60px}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.metric{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}.metric b{font-size:22px}.metric span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:14px 0;overflow:hidden}
+.cardhead{display:flex;justify-content:space-between;gap:12px;padding:16px;border-bottom:1px solid var(--line)}
+.badge{display:inline-block;background:var(--soft);color:var(--accent);padding:3px 7px;border-radius:999px;font-size:12px;margin-right:6px}
+.prompt{padding:16px;background:#fcfcfd;border-bottom:1px solid var(--line);line-height:1.7}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:0}
+.rubric{padding:14px 16px;border-right:1px solid var(--line)}
+.row{display:grid;grid-template-columns:28px 70px 1fr 54px;gap:8px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border-bottom:0}.type{color:var(--muted);font-size:12px}.pts{text-align:right;font-variant-numeric:tabular-nums}
+.meta{padding:14px 16px}.meta label{display:block;color:var(--muted);font-size:12px;margin:10px 0 4px}.meta input,.meta textarea{width:100%}
+.score{font-size:30px;font-weight:700;color:var(--accent)}.pending{color:var(--muted);font-size:13px}
+footer{color:var(--muted);text-align:center;margin-top:28px;font-size:12px}
+@media(max-width:800px){.toolbar{grid-template-columns:1fr 1fr}.summary{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}.rubric{border-right:0;border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<header>
+  <h1>ChinaBench-T2I <span class="badge">V0.1</span></h1>
+  <div class="sub">十二生肖 × 中国传统文化 · 原子评分测试台</div>
+  <div class="toolbar">
+    <select id="suite"><option value="">全部套件</option><option value="core">Core 24</option><option value="anchor">Anchor 6</option></select>
+    <select id="zodiac"><option value="">全部生肖</option></select>
+    <select id="cap"><option value="">全部能力</option></select>
+    <input id="search" placeholder="搜索题目 / Prompt">
+    <button id="export" class="primary">导出结果 JSON</button>
+  </div>
+</header>
+<main>
+  <section class="summary">
+    <div class="metric"><b id="shown">0</b><span>当前显示题目</span></div>
+    <div class="metric"><b id="scored">0</b><span>已评分题目</span></div>
+    <div class="metric"><b id="avg">—</b><span>已评分平均分 / 10</span></div>
+    <div class="metric"><b id="total">0</b><span>总题数</span></div>
+  </section>
+  <div id="list"></div>
+  <footer>JSON 是真相源；HTML 仅作为测试与展示界面。正式分数必须基于真实生成图。</footer>
+</main>
+<script>
+const stateKey='chinabench-v0.1-results';
+let items=[], saved=JSON.parse(localStorage.getItem(stateKey)||'{}');
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+async function load(){
+  const [core,anchor]=await Promise.all([
+    fetch('../benchmark/v0.1/questions.json').then(r=>r.json()),
+    fetch('../benchmark/v0.1/anchors.json').then(r=>r.json())
+  ]);
+  items=[...core.questions,...anchor.questions];
+  $('#total').textContent=items.length;
+  const z=[...new Set(items.map(x=>x.zodiac))].sort();
+  $('#zodiac').innerHTML+=[...z].map(x=>'<option>'+esc(x)+'</option>').join('');
+  Object.entries(core.capabilities).forEach(([k,v])=>$('#cap').innerHTML+='<option value="'+k+'">'+k+' · '+esc(v)+'</option>');
+  render();
+}
+function currentScore(item){
+  const s=saved[item.id]; if(!s) return null;
+  let total=0,any=false;
+  item.rubric.forEach((rr,i)=>{if(s.checks?.[i]){total+=rr.points;any=true}});
+  return any?total:null;
+}
+function persist(id,patch){
+  saved[id]={...(saved[id]||{}),...patch};
+  localStorage.setItem(stateKey,JSON.stringify(saved)); renderSummary();
+}
+function renderSummary(){
+  const scores=items.map(currentScore).filter(x=>x!==null);
+  $('#scored').textContent=scores.length;
+  $('#avg').textContent=scores.length?(scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(2):'—';
+}
+function render(){
+  const suite=$('#suite').value,zodiac=$('#zodiac').value,cap=$('#cap').value,q=$('#search').value.trim().toLowerCase();
+  const filtered=items.filter(x=>(!suite||x.suite===suite)&&(!zodiac||x.zodiac===zodiac)&&(!cap||x.capabilities.includes(cap))&&(!q||(x.title+x.prompt_cn+x.id).toLowerCase().includes(q)));
+  $('#shown').textContent=filtered.length;
+  $('#list').innerHTML=filtered.map(item=>{
+    const s=saved[item.id]||{checks:[]};
+    const score=currentScore(item);
+    const rows=item.rubric.map((rr,i)=>`
+      <div class="row">
+        <input type="checkbox" data-id="${item.id}" data-i="${i}" ${s.checks?.[i]?'checked':''}>
+        <span class="type">${esc(rr.type)}</span>
+        <span>${esc(rr.description)}</span>
+        <span class="pts">${rr.points}</span>
+      </div>`).join('');
+    return `<article class="card">
+      <div class="cardhead">
+        <div><b>${item.id}｜${esc(item.title)}</b><div style="margin-top:7px"><span class="badge">${item.suite}</span><span class="badge">${esc(item.zodiac)}</span><span class="badge">L${item.difficulty}</span>${item.capabilities.map(c=>'<span class="badge">'+c+'</span>').join('')}</div></div>
+        <div><div class="score">${score===null?'—':score.toFixed(1)}</div><div class="pending">/ 10</div></div>
+      </div>
+      <div class="prompt"><b>Prompt</b><br>${esc(item.prompt_cn)}</div>
+      <div class="grid">
+        <div class="rubric"><b>Atomic Rubric</b>${rows}</div>
+        <div class="meta">
+          <b>Result Metadata</b>
+          <label>Generator Product</label><input data-field="generator_product" data-id="${item.id}" value="${esc(s.generator_product||'ChatGPT Image Generation')}">
+          <label>Generator Model</label><input data-field="generator_model" data-id="${item.id}" value="${esc(s.generator_model||'exact model undisclosed')}">
+          <label>Evaluator Model</label><input data-field="evaluator_model" data-id="${item.id}" value="${esc(s.evaluator_model||'GPT-5.6 Sol')}">
+          <label>Result Image URL / Path</label><input data-field="result_image" data-id="${item.id}" value="${esc(s.result_image||'')}">
+          <label>Failure Notes</label><textarea data-field="failure_notes" data-id="${item.id}" rows="4">${esc(s.failure_notes||'')}</textarea>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+  document.querySelectorAll('input[type=checkbox]').forEach(el=>el.addEventListener('change',e=>{
+    const id=e.target.dataset.id,i=+e.target.dataset.i,old=saved[id]||{checks:[]},checks=[...(old.checks||[])];checks[i]=e.target.checked;
+    persist(id,{checks}); render();
+  }));
+  document.querySelectorAll('[data-field]').forEach(el=>el.addEventListener('change',e=>persist(e.target.dataset.id,{[e.target.dataset.field]:e.target.value})));
+  renderSummary();
+}
+['suite','zodiac','cap'].forEach(id=>$('#'+id).addEventListener('change',render));
+$('#search').addEventListener('input',render);
+$('#export').addEventListener('click',()=>{
+  const out={
+    benchmark:'ChinaBench-T2I',version:'0.1',exported_at:new Date().toISOString(),
+    results:items.map(item=>{
+      const s=saved[item.id]||{},score=currentScore(item);
+      return {test_id:item.id,suite:item.suite,title:item.title,generator_product:s.generator_product||'ChatGPT Image Generation',generator_model:s.generator_model||'exact model undisclosed',generator_model_visibility:'undisclosed',selection_policy:'first_image',evaluator_model:s.evaluator_model||'GPT-5.6 Sol',status:score===null?'awaiting_generation_or_scoring':'scored',atomic_scores:item.rubric.map((rr,i)=>({description:rr.description,points:rr.points,passed:!!s.checks?.[i],awarded:s.checks?.[i]?rr.points:0})),total_score:score,failure_notes:s.failure_notes||'',result_image:s.result_image||null};
+    })
+  };
+  const blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='chinabench-v0.1-results.json';a.click();URL.revokeObjectURL(a.href);
+});
+load().catch(err=>$('#list').innerHTML='<div class="card" style="padding:20px">加载失败：'+esc(err.message)+'。请通过 HTTP/GitHub Pages 打开，不要直接 file:// 打开。</div>');
+</script>
+</body>
+</html>
