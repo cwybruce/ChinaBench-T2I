@@ -1,0 +1,35 @@
+{
+  "benchmark": "ChinaBench-T2I",
+  "version": "0.1",
+  "capability_definitions": {
+    "C1": "Subject Recognition",
+    "C2": "Counting",
+    "C3": "Attribute Binding",
+    "C4": "Spatial Relation",
+    "C5": "Action Relation",
+    "C6": "Composition",
+    "C7": "Chinese Text",
+    "C8": "Cultural Accuracy"
+  },
+  "score_policy": {
+    "per_question_max": 10,
+    "official_result_requires_real_image": true,
+    "default_selection_policy": "first_image",
+    "evaluator_required": true,
+    "generator_metadata_required": true
+  },
+  "result_required_fields": [
+    "test_id",
+    "generator_product",
+    "generator_model",
+    "generator_model_visibility",
+    "generation_date",
+    "selection_policy",
+    "evaluator_model",
+    "status",
+    "atomic_scores",
+    "total_score",
+    "failure_notes",
+    "result_image"
+  ]
+}
