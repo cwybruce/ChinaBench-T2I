@@ -27,8 +27,8 @@ jobs:
       - name: Build public site
         shell: bash
         run: |
-          mkdir -p _site/app _site/benchmark/v0.1
-          cp web/index.html _site/app/index.html
+          mkdir -p _site/web _site/benchmark/v0.1
+          cp web/index.html _site/web/index.html
           cp benchmark/v0.1/questions.json _site/benchmark/v0.1/questions.json
           cp benchmark/v0.1/anchors.json _site/benchmark/v0.1/anchors.json
           cp index.html _site/index.html
