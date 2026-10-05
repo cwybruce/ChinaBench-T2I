@@ -1,0 +1,376 @@
+{
+  "benchmark": "ChinaBench-T2I",
+  "version": "0.1",
+  "suite": "anchor",
+  "language": "zh-CN",
+  "created": "2026-10-06",
+  "scoring": "Each anchor is atomically scored out of 10.",
+  "capabilities": {
+    "C1": "Subject Recognition",
+    "C2": "Counting",
+    "C3": "Attribute Binding",
+    "C4": "Spatial Relation",
+    "C5": "Action Relation",
+    "C6": "Composition",
+    "C7": "Chinese Text",
+    "C8": "Cultural Accuracy"
+  },
+  "questions": [
+    {
+      "id": "CB-A01",
+      "suite": "anchor",
+      "zodiac": "兔/虎",
+      "title": "兔骑虎 + 福字灯笼",
+      "difficulty": 4,
+      "capabilities": [
+        "C3",
+        "C5",
+        "C7",
+        "C8"
+      ],
+      "prompt_cn": "一只白色兔子骑在一只黑色老虎背上。兔子右手提着一盏红色灯笼，灯笼正面清楚写着一个金色汉字“福”。它们正在穿过一座传统中式牌楼。画面中不要出现其他动物。",
+      "max_score": 10,
+      "anchor": true,
+      "rubric": [
+        {
+          "type": "C1",
+          "description": "出现且仅出现一只兔子",
+          "points": 1
+        },
+        {
+          "type": "C3",
+          "description": "兔子为白色",
+          "points": 1
+        },
+        {
+          "type": "C1",
+          "description": "出现且仅出现一只老虎",
+          "points": 1
+        },
+        {
+          "type": "C3",
+          "description": "老虎主体呈黑色",
+          "points": 1
+        },
+        {
+          "type": "C5",
+          "description": "兔子明确骑在老虎背上",
+          "points": 2
+        },
+        {
+          "type": "C5",
+          "description": "兔子右手持红灯笼",
+          "points": 1
+        },
+        {
+          "type": "C7",
+          "description": "灯笼正确写出“福”",
+          "points": 1
+        },
+        {
+          "type": "C8",
+          "description": "出现传统中式牌楼",
+          "points": 1
+        },
+        {
+          "type": "C1",
+          "description": "无其他动物",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "id": "CB-A02",
+      "suite": "anchor",
+      "zodiac": "龙",
+      "title": "中国舞龙 vs 西方龙",
+      "difficulty": 4,
+      "capabilities": [
+        "C6",
+        "C8"
+      ],
+      "prompt_cn": "春节庙会上，一支传统中国舞龙队正在表演。舞龙是一条细长、无翅膀的中国龙，由至少六名表演者分别举着长杆共同操控。画面中不要出现西方龙，不要出现巨大蝙蝠状翅膀。",
+      "max_score": 10,
+      "anchor": true,
+      "rubric": [
+        {
+          "type": "C8",
+          "description": "主体明确是中国传统龙",
+          "points": 2
+        },
+        {
+          "type": "C8",
+          "description": "龙身细长连续",
+          "points": 1
+        },
+        {
+          "type": "C8",
+          "description": "无巨大西式翅膀",
+          "points": 1
+        },
+        {
+          "type": "C2",
+          "description": "至少六名表演者",
+          "points": 1
+        },
+        {
+          "type": "C6",
+          "description": "多人通过长杆共同操控龙身",
+          "points": 2
+        },
+        {
+          "type": "C8",
+          "description": "场景具有春节庙会特征",
+          "points": 1
+        },
+        {
+          "type": "C1",
+          "description": "无额外西方龙",
+          "points": 1
+        },
+        {
+          "type": "C6",
+          "description": "整体构图关系清楚",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "id": "CB-A03",
+      "suite": "anchor",
+      "zodiac": "鸡/猴",
+      "title": "鸡划龙舟，猴击鼓",
+      "difficulty": 4,
+      "capabilities": [
+        "C4",
+        "C5",
+        "C8"
+      ],
+      "prompt_cn": "端午节河面上，一只公鸡站在一条传统龙舟的中部，双翅握着一支船桨正在划船；一只猴子坐在船头，双手用鼓槌敲打一面红色大鼓。船上只出现这两只生肖动物。",
+      "max_score": 10,
+      "anchor": true,
+      "rubric": [
+        {
+          "type": "C1",
+          "description": "出现一只公鸡",
+          "points": 1
+        },
+        {
+          "type": "C4",
+          "description": "公鸡位于龙舟中部",
+          "points": 1
+        },
+        {
+          "type": "C5",
+          "description": "公鸡明确持桨并执行划船动作",
+          "points": 2
+        },
+        {
+          "type": "C1",
+          "description": "出现一只猴子",
+          "points": 1
+        },
+        {
+          "type": "C4",
+          "description": "猴子位于船头",
+          "points": 1
+        },
+        {
+          "type": "C5",
+          "description": "猴子用鼓槌击打一面红鼓",
+          "points": 2
+        },
+        {
+          "type": "C8",
+          "description": "船为可识别的传统龙舟",
+          "points": 1
+        },
+        {
+          "type": "C1",
+          "description": "无其他生肖动物",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "id": "CB-A04",
+      "suite": "anchor",
+      "zodiac": "猴",
+      "title": "猴子刺绣牡丹",
+      "difficulty": 3,
+      "capabilities": [
+        "C5",
+        "C6",
+        "C8"
+      ],
+      "prompt_cn": "一只真实比例的猴子坐在传统中式刺绣架前，左手扶着绣绷，右手拿针线，正在一块白色丝绸上刺绣一朵红色牡丹。场景为传统中式室内，不要画成猴子拿毛笔绘画。",
+      "max_score": 10,
+      "anchor": true,
+      "rubric": [
+        {
+          "type": "C1",
+          "description": "出现一只猴子",
+          "points": 1
+        },
+        {
+          "type": "C8",
+          "description": "猴子坐在刺绣架前",
+          "points": 1
+        },
+        {
+          "type": "C5",
+          "description": "左手扶绣绷",
+          "points": 1
+        },
+        {
+          "type": "C5",
+          "description": "右手拿针线",
+          "points": 1
+        },
+        {
+          "type": "C5",
+          "description": "动作明确为刺绣而非绘画",
+          "points": 2
+        },
+        {
+          "type": "C3",
+          "description": "材料为白色丝绸",
+          "points": 1
+        },
+        {
+          "type": "C3",
+          "description": "图案为红色牡丹",
+          "points": 1
+        },
+        {
+          "type": "C8",
+          "description": "场景具有传统中式室内特征",
+          "points": 1
+        },
+        {
+          "type": "C8",
+          "description": "不出现毛笔作画替代",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "id": "CB-A05",
+      "suite": "anchor",
+      "zodiac": "全生肖",
+      "title": "十二生肖全家福",
+      "difficulty": 5,
+      "capabilities": [
+        "C1",
+        "C2",
+        "C8"
+      ],
+      "prompt_cn": "传统中国红色剪纸风格。十二生肖鼠、牛、虎、兔、龙、蛇、马、羊、猴、鸡、狗、猪各出现恰好一只，共十二只，围成一个完整圆环。不要重复任何生肖，不要遗漏任何生肖，不要加入猫、熊或其他动物。",
+      "max_score": 10,
+      "anchor": true,
+      "rubric": [
+        {
+          "type": "C1",
+          "description": "鼠、牛、虎均出现且各一只",
+          "points": 1.5
+        },
+        {
+          "type": "C1",
+          "description": "兔、龙、蛇均出现且各一只",
+          "points": 1.5
+        },
+        {
+          "type": "C1",
+          "description": "马、羊、猴均出现且各一只",
+          "points": 1.5
+        },
+        {
+          "type": "C1",
+          "description": "鸡、狗、猪均出现且各一只",
+          "points": 1.5
+        },
+        {
+          "type": "C2",
+          "description": "总数恰好12",
+          "points": 1
+        },
+        {
+          "type": "C2",
+          "description": "无生肖重复",
+          "points": 1
+        },
+        {
+          "type": "C1",
+          "description": "无额外动物",
+          "points": 1
+        },
+        {
+          "type": "C4",
+          "description": "构成完整圆环",
+          "points": 0.5
+        },
+        {
+          "type": "C8",
+          "description": "红色中国剪纸视觉语言成立",
+          "points": 0.5
+        }
+      ]
+    },
+    {
+      "id": "CB-A06",
+      "suite": "anchor",
+      "zodiac": "无",
+      "title": "中文春联",
+      "difficulty": 4,
+      "capabilities": [
+        "C7",
+        "C8"
+      ],
+      "prompt_cn": "正面视角的传统中式宅院大门。门左右各贴一条竖向红色春联：右侧上联清楚写“春风入户”，左侧下联清楚写“喜气盈门”；门上方横批清楚写“万事如意”。除这三处文字外不要出现其他可读文字。",
+      "max_score": 10,
+      "anchor": true,
+      "rubric": [
+        {
+          "type": "C7",
+          "description": "“春风入户”四字全部正确",
+          "points": 2
+        },
+        {
+          "type": "C7",
+          "description": "“喜气盈门”四字全部正确",
+          "points": 2
+        },
+        {
+          "type": "C7",
+          "description": "“万事如意”四字全部正确",
+          "points": 2
+        },
+        {
+          "type": "C4",
+          "description": "上联位于画面右侧并竖排",
+          "points": 1
+        },
+        {
+          "type": "C4",
+          "description": "下联位于画面左侧并竖排",
+          "points": 1
+        },
+        {
+          "type": "C4",
+          "description": "横批位于门上方并横排",
+          "points": 1
+        },
+        {
+          "type": "C7",
+          "description": "无额外可读文字",
+          "points": 0.5
+        },
+        {
+          "type": "C8",
+          "description": "场景为传统中式宅院大门",
+          "points": 0.5
+        }
+      ]
+    }
+  ]
+}
