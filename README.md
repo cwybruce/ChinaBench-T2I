@@ -4,15 +4,17 @@
 
 **ChinaBench-T2I** 是一套以十二生肖与中国传统文化为统一载体的文生图（Text-to-Image）能力测试框架。
 
-它不是“看谁画得更好看”，而是把图像生成拆成可以被验证、比较和复测的能力单元：对象、数量、属性绑定、空间关系、动作关系、中文文字、文化准确性、长指令遵循与组合泛化。
+它不以“谁画得更漂亮”为核心，而是把生成能力拆成可验证、可比较、可复测的能力单元：对象、数量、属性绑定、空间关系、动作关系、组合、中文文字与中国文化准确性。
 
-## 核心目标
+## V0.1 已完成
 
-1. 建立一套具有中国文化辨识度、但底层能力定义通用的 T2I Benchmark。
-2. 使用固定题目与原子评分，让不同模型、不同版本能够横向与纵向比较。
-3. 区分“视觉质量”与“是否真正完成题目”，避免审美掩盖指令失败。
-4. 保留一组长期不变的 Anchor Questions，观察模型能力演进。
-5. 记录每道题的设计来源、能力目标、失败模式与评分依据。
+- **Core Suite：24 题** — 十二生肖每个生肖 2 题
+- **Anchor Suite：6 题** — 长期固定回归测试
+- **总计：30 个测试**
+- 每题固定 **10 分原子评分**
+- 已建立 ChatGPT Image Generation 基线 Run Manifest
+- 已建立交互式 HTML Test Bench
+- 已通过 V0.1 数据结构自检
 
 ## 核心方法
 
@@ -31,53 +33,61 @@ DrawBench / PartiPrompts / DDPO / T2I-CompBench / GenEval / TIFA / DPG-Bench
                      ChinaBench Score
 ```
 
-## V0.1 方向
+## 8 个能力维度
 
-第一版先做 **24 题**：
+| ID | 能力 |
+|---|---|
+| C1 | Subject Recognition |
+| C2 | Counting |
+| C3 | Attribute Binding |
+| C4 | Spatial Relation |
+| C5 | Action Relation |
+| C6 | Composition |
+| C7 | Chinese Text |
+| C8 | Cultural Accuracy |
 
-- 十二生肖作为统一角色系统
-- 每个生肖 2 道题
-- 覆盖基础识别、计数、属性绑定、空间、动作、中文、文化知识、复杂指令
-- 其中 6 道设为长期固定 Anchor Questions
+## 快速入口
 
-## 评分原则
+- `benchmark/v0.1/questions.json` — 24 题机器可读真相源
+- `benchmark/v0.1/anchors.json` — 6 道 Anchor
+- `benchmark/v0.1/questions.md` — 24 题浏览表
+- `benchmark/v0.1/anchor-questions.md` — Anchor 详细评分
+- `scoring/rubric.json` — 机器可读评分规则
+- `web/index.html` — 交互式测试台
+- `results/chatgpt-image/run-2026-10-06.json` — 当前基线结果槽位
+- `tests/v0.1-validation.md` — V0.1 自检报告
 
-总分 100：
+## 结果模型标注
 
-| 维度 | 权重 |
-|---|---:|
-| Instruction Following | 20 |
-| Object / Counting | 15 |
-| Attribute Binding | 10 |
-| Spatial Relationship | 10 |
-| Action Relationship | 10 |
-| Chinese Text | 15 |
-| Cultural Accuracy | 15 |
-| Visual Quality | 5 |
+每条正式结果必须同时写：
 
-**视觉美感只占 5%。** Benchmark 的第一目标是“答对题”，不是“画得漂亮”。
+- **Generator Product / Model**
+- **Evaluator Model**
 
-## 仓库结构
+当前默认：
 
 ```text
-ChinaBench-T2I/
-├── docs/               # 设计理念、能力体系、路线图
-├── benchmark/          # 题库与版本
-├── scoring/            # 评分规则
-├── references/         # 经典 Benchmark 来源与设计谱系
-├── results/            # 模型测试结果与排行榜
-└── CHANGELOG.md
+Generator Product: ChatGPT Image Generation
+Generator Model: exact model undisclosed
+Evaluator Model: GPT-5.6 Sol
 ```
+
+不能把 GPT-5.6 Sol 错写成图像生成模型。
+
+## 正式评分纪律
+
+1. Prompt 原样输入。
+2. 默认使用 first image，不挑图。
+3. 没有真实生成图，不给正式分。
+4. 每题逐项 Atomic Scoring。
+5. 模型名、日期、Selection Policy、图片必须可追踪。
+6. 视觉美感不能抵消指令、关系、文字或文化错误。
 
 ## 当前状态
 
-**V0.1 / Private Draft**
+**V0.1 / Private Benchmark Ready**
 
-当前重点不是快速扩题，而是先把：
-
-> 能力定义 → 出题原则 → 原子评分 → Anchor Questions
-
-这条闭环建立稳定。
+下一阶段是执行真实模型 Run，并把图片与分数写回结果集。
 
 ---
 
