@@ -1,0 +1,4382 @@
+[
+  {
+    "id": "CB-001",
+    "title": "三鼠颜色与位置",
+    "suite": "core",
+    "zodiac": "鼠",
+    "difficulty": 2,
+    "capabilities": [
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "prompt": "传统中式庭院中，恰好三只老鼠从左到右站成一排：左边灰色，中间白色，右边黑色。中间的白鼠双手提着一盏红灯笼。画面中不要出现其他动物。",
+    "rubric": [
+      {
+        "type": "C2",
+        "description": "恰好出现三只老鼠",
+        "points": 2,
+        "id": "q0"
+      },
+      {
+        "type": "C3",
+        "description": "左侧老鼠为灰色",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C3",
+        "description": "中间老鼠为白色",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C3",
+        "description": "右侧老鼠为黑色",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C4",
+        "description": "三只老鼠左右顺序正确",
+        "points": 2,
+        "id": "q4"
+      },
+      {
+        "type": "C5",
+        "description": "中间白鼠明确提着红灯笼",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C8",
+        "description": "背景为可识别的传统中式庭院",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C1",
+        "description": "无其他动物",
+        "points": 1,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "explicit",
+      "entities": [
+        {
+          "id": "m1",
+          "label": "灰色老鼠",
+          "type": "zodiac",
+          "x": 24,
+          "y": 58
+        },
+        {
+          "id": "m2",
+          "label": "白色老鼠",
+          "type": "zodiac",
+          "x": 50,
+          "y": 58
+        },
+        {
+          "id": "m3",
+          "label": "黑色老鼠",
+          "type": "zodiac",
+          "x": 76,
+          "y": 58
+        },
+        {
+          "id": "lantern",
+          "label": "红灯笼",
+          "type": "prop",
+          "x": 50,
+          "y": 32
+        }
+      ],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "m2",
+          "to": "lantern",
+          "label": "双手提"
+        }
+      ],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": "web/assets/results/CB-001.jpg",
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-002",
+    "title": "老鼠拉二胡",
+    "suite": "core",
+    "zodiac": "鼠",
+    "difficulty": 3,
+    "capabilities": [
+      "C1",
+      "C5",
+      "C8"
+    ],
+    "prompt": "一只棕色老鼠坐在低矮木凳上演奏二胡：左手按住二胡琴杆上的弦，右手持弓在两根弦之间拉奏。传统中式室内场景。不要出现小提琴、吉他或其他西方弦乐器。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "只出现一只棕色老鼠",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C8",
+        "description": "乐器明确为二胡",
+        "points": 2,
+        "id": "q1"
+      },
+      {
+        "type": "C5",
+        "description": "左手位于琴杆并执行按弦动作",
+        "points": 1.5,
+        "id": "q2"
+      },
+      {
+        "type": "C5",
+        "description": "右手持弓执行拉奏动作",
+        "points": 1.5,
+        "id": "q3"
+      },
+      {
+        "type": "C5",
+        "description": "琴弓与二胡弦关系合理",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C1",
+        "description": "老鼠坐在低矮木凳上",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C8",
+        "description": "传统中式室内视觉成立",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C8",
+        "description": "不出现小提琴/吉他等替代乐器",
+        "points": 1,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "老鼠拉二胡",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": "web/assets/results/CB-002.jpg",
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-003",
+    "title": "黑牛在白马左侧",
+    "suite": "core",
+    "zodiac": "牛",
+    "difficulty": 2,
+    "capabilities": [
+      "C1",
+      "C3",
+      "C4"
+    ],
+    "prompt": "一头黑色水牛站在一匹白马的左侧，两者面向同一个方向，彼此不重叠。背景是中国南方水田。画面中只出现这两只大型动物。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现一头可识别的水牛",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C3",
+        "description": "水牛为黑色",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C1",
+        "description": "出现一匹马",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C3",
+        "description": "马为白色",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C4",
+        "description": "水牛位于白马左侧",
+        "points": 2,
+        "id": "q4"
+      },
+      {
+        "type": "C4",
+        "description": "两者面向同一方向",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C4",
+        "description": "两者彼此不重叠",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C8",
+        "description": "背景为中国南方水田",
+        "points": 1,
+        "id": "q7"
+      },
+      {
+        "type": "C1",
+        "description": "无其他大型动物",
+        "points": 1,
+        "id": "q8"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q8",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "黑牛在白马左侧",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": "web/assets/results/CB-003.jpg",
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-004",
+    "title": "水牛放燕子风筝",
+    "suite": "core",
+    "zodiac": "牛",
+    "difficulty": 3,
+    "capabilities": [
+      "C1",
+      "C5",
+      "C8"
+    ],
+    "prompt": "一头水牛在春天的田野里放一只传统燕子造型风筝。水牛嘴里咬着风筝线轴，细线从线轴一直连接到天空中的燕子风筝。不要出现人类帮助它。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "主体是一头水牛",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C8",
+        "description": "风筝明确为传统燕子造型",
+        "points": 2,
+        "id": "q1"
+      },
+      {
+        "type": "C5",
+        "description": "水牛嘴部明确咬住线轴",
+        "points": 1.5,
+        "id": "q2"
+      },
+      {
+        "type": "C5",
+        "description": "线从线轴连续连接到风筝",
+        "points": 2,
+        "id": "q3"
+      },
+      {
+        "type": "C5",
+        "description": "整体关系明确表现为水牛在放风筝",
+        "points": 1.5,
+        "id": "q4"
+      },
+      {
+        "type": "C8",
+        "description": "春季中国田野语境成立",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C1",
+        "description": "无人类帮助",
+        "points": 1,
+        "id": "q6"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "水牛放燕子风筝",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": "web/assets/results/CB-004.jpg",
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-005",
+    "title": "双虎围巾属性绑定",
+    "suite": "core",
+    "zodiac": "虎",
+    "difficulty": 2,
+    "capabilities": [
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "prompt": "恰好两只老虎面对镜头并排坐着：左边的老虎戴蓝色围巾，右边的老虎戴红色围巾。除此之外不要出现第三只老虎或其他猫科动物。",
+    "rubric": [
+      {
+        "type": "C2",
+        "description": "恰好两只老虎",
+        "points": 2,
+        "id": "q0"
+      },
+      {
+        "type": "C4",
+        "description": "两只老虎并排且左/右可区分",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C3",
+        "description": "左虎戴蓝色围巾",
+        "points": 2,
+        "id": "q2"
+      },
+      {
+        "type": "C3",
+        "description": "右虎戴红色围巾",
+        "points": 2,
+        "id": "q3"
+      },
+      {
+        "type": "C1",
+        "description": "两只主体均可识别为老虎",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C1",
+        "description": "无第三只老虎",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C1",
+        "description": "无其他猫科动物",
+        "points": 1,
+        "id": "q6"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": [
+          "q4"
+        ]
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q4"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q4"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q4"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": []
+      },
+      {
+        "id": "q5",
+        "depends_on": []
+      },
+      {
+        "id": "q6",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "双虎围巾属性绑定",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": "web/assets/results/CB-005.jpg",
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-006",
+    "title": "老虎打中国鼓",
+    "suite": "core",
+    "zodiac": "虎",
+    "difficulty": 3,
+    "capabilities": [
+      "C1",
+      "C5",
+      "C8"
+    ],
+    "prompt": "一只老虎直立在传统中国大鼓前，左右前爪各握一根鼓槌，正在同时敲击鼓面。鼓身为红色并带金色鼓钉。画面中不要出现舞狮头。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现且仅出现一只老虎",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C5",
+        "description": "老虎左右前爪各持一根鼓槌",
+        "points": 2,
+        "id": "q1"
+      },
+      {
+        "type": "C5",
+        "description": "鼓槌明确接触或朝向鼓面形成击鼓动作",
+        "points": 2,
+        "id": "q2"
+      },
+      {
+        "type": "C8",
+        "description": "鼓为传统中国大鼓",
+        "points": 1.5,
+        "id": "q3"
+      },
+      {
+        "type": "C3",
+        "description": "鼓身红色",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C8",
+        "description": "具有金色鼓钉",
+        "points": 0.5,
+        "id": "q5"
+      },
+      {
+        "type": "C8",
+        "description": "不出现舞狮头",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C6",
+        "description": "老虎、鼓、鼓槌关系清晰无遮挡",
+        "points": 1,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": []
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "老虎打中国鼓",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": "web/assets/results/CB-006.jpg",
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-007",
+    "title": "双兔茶具动作绑定",
+    "suite": "core",
+    "zodiac": "兔",
+    "difficulty": 4,
+    "capabilities": [
+      "C1",
+      "C3",
+      "C5",
+      "C6",
+      "C8"
+    ],
+    "prompt": "茶桌前有两只兔子：左侧白兔用一把青花瓷茶壶向一只红色茶杯倒茶；右侧灰兔双手端着一个空木托盘。茶水只从白兔手中的茶壶流向红杯。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "恰好两只兔子",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C3",
+        "description": "左兔为白色、右兔为灰色",
+        "points": 1.5,
+        "id": "q1"
+      },
+      {
+        "type": "C8",
+        "description": "茶壶具有青花瓷特征",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C5",
+        "description": "白兔持茶壶并执行倒茶动作",
+        "points": 2,
+        "id": "q3"
+      },
+      {
+        "type": "C3",
+        "description": "被倒入的茶杯为红色",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C5",
+        "description": "茶水方向从茶壶进入红杯",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C5",
+        "description": "灰兔只端空木托盘",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C6",
+        "description": "两只兔子的动作没有互换",
+        "points": 1,
+        "id": "q7"
+      },
+      {
+        "type": "C1",
+        "description": "无其他动物",
+        "points": 0.5,
+        "id": "q8"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      },
+      {
+        "id": "q8",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "explicit",
+      "entities": [
+        {
+          "id": "rabbit1",
+          "label": "左侧白兔",
+          "type": "zodiac",
+          "x": 25,
+          "y": 56
+        },
+        {
+          "id": "teapot",
+          "label": "青花瓷茶壶",
+          "type": "prop",
+          "x": 38,
+          "y": 45
+        },
+        {
+          "id": "cup",
+          "label": "红色茶杯",
+          "type": "prop",
+          "x": 48,
+          "y": 66
+        },
+        {
+          "id": "rabbit2",
+          "label": "右侧灰兔",
+          "type": "zodiac",
+          "x": 75,
+          "y": 56
+        },
+        {
+          "id": "tray",
+          "label": "木托盘",
+          "type": "prop",
+          "x": 63,
+          "y": 66
+        }
+      ],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "rabbit1",
+          "to": "cup",
+          "label": "倒茶"
+        },
+        {
+          "id": "r2",
+          "from": "rabbit2",
+          "to": "tray",
+          "label": "持托盘"
+        }
+      ],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": "web/assets/results/CB-007.jpg",
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-008",
+    "title": "月宫玉兔捣药",
+    "suite": "core",
+    "zodiac": "兔",
+    "difficulty": 3,
+    "capabilities": [
+      "C1",
+      "C5",
+      "C8"
+    ],
+    "prompt": "满月下，一只白色玉兔站在月桂树旁，用双手握着长杵，在石臼中捣药。石臼内可见草药。整体采用中国传统月宫传说的视觉语境，不要出现胡萝卜。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现一只白兔",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C8",
+        "description": "场景明确具有月宫/满月语境",
+        "points": 1.5,
+        "id": "q1"
+      },
+      {
+        "type": "C8",
+        "description": "出现月桂树或桂树意象",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C5",
+        "description": "兔子双手握长杵",
+        "points": 1.5,
+        "id": "q3"
+      },
+      {
+        "type": "C5",
+        "description": "长杵进入石臼形成捣药动作",
+        "points": 2,
+        "id": "q4"
+      },
+      {
+        "type": "C8",
+        "description": "石臼内存在草药",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C8",
+        "description": "整体符合玉兔捣药文化意象",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C1",
+        "description": "不出现胡萝卜干扰",
+        "points": 1,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "月宫玉兔捣药",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": "web/assets/results/CB-008.jpg",
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-009",
+    "title": "中国龙形态辨识",
+    "suite": "core",
+    "zodiac": "龙",
+    "difficulty": 3,
+    "capabilities": [
+      "C1",
+      "C8"
+    ],
+    "prompt": "一条传统中国龙盘旋在云海上方：身体细长如蛇、四肢较短、无巨大翅膀、头部有中国龙角与须。不要出现西方四足有翼巨龙。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "主体为单一龙形生物",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C8",
+        "description": "身体细长呈中国龙式长体",
+        "points": 2,
+        "id": "q1"
+      },
+      {
+        "type": "C8",
+        "description": "头部具有中国龙角与须",
+        "points": 1.5,
+        "id": "q2"
+      },
+      {
+        "type": "C8",
+        "description": "无巨大蝙蝠状翅膀",
+        "points": 1.5,
+        "id": "q3"
+      },
+      {
+        "type": "C8",
+        "description": "整体视觉可识别为中国龙而非西方龙",
+        "points": 2,
+        "id": "q4"
+      },
+      {
+        "type": "C8",
+        "description": "云海语境自然",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C1",
+        "description": "无第二条西方龙",
+        "points": 1,
+        "id": "q6"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": []
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "中国龙形态辨识",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": "web/assets/results/CB-009.jpg",
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-010",
+    "title": "龙与猴下中国象棋",
+    "suite": "core",
+    "zodiac": "龙",
+    "difficulty": 4,
+    "capabilities": [
+      "C1",
+      "C5",
+      "C6",
+      "C8"
+    ],
+    "prompt": "一条小型中国龙和一只猴子面对面坐在方桌两侧下中国象棋。棋盘位于两者正中，能看出红黑两方圆形棋子。中国龙用一只前爪正拿起一枚红棋，猴子注视棋盘。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现一条中国龙",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C1",
+        "description": "出现一只猴子",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C8",
+        "description": "棋盘可识别为中国象棋而非国际象棋",
+        "points": 2,
+        "id": "q2"
+      },
+      {
+        "type": "C8",
+        "description": "存在红黑两方圆形棋子",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C4",
+        "description": "龙与猴面对面位于桌两侧",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C5",
+        "description": "中国龙正在拿起一枚红棋",
+        "points": 1.5,
+        "id": "q5"
+      },
+      {
+        "type": "C5",
+        "description": "猴子注视棋盘而非执行其他动作",
+        "points": 0.5,
+        "id": "q6"
+      },
+      {
+        "type": "C6",
+        "description": "棋盘位于双方之间且关系清楚",
+        "points": 1,
+        "id": "q7"
+      },
+      {
+        "type": "C1",
+        "description": "无额外动物",
+        "points": 1,
+        "id": "q8"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q8",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "龙与猴下中国象棋",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": "web/assets/results/CB-010.jpg",
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-011",
+    "title": "蛇与竹石灯笼空间关系",
+    "suite": "core",
+    "zodiac": "蛇",
+    "difficulty": 2,
+    "capabilities": [
+      "C1",
+      "C3",
+      "C4",
+      "C8"
+    ],
+    "prompt": "一条绿色蛇盘绕在画面左侧的一根竹子上；画面右侧是一盏石灯笼。蛇的头部朝向石灯笼，但蛇身体不能接触石灯笼。背景为中式园林。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现一条蛇",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C3",
+        "description": "蛇为绿色",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C5",
+        "description": "蛇明确盘绕在竹子上",
+        "points": 2,
+        "id": "q2"
+      },
+      {
+        "type": "C4",
+        "description": "蛇和竹子位于画面左侧",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C4",
+        "description": "石灯笼位于画面右侧",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C4",
+        "description": "蛇头朝向石灯笼",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C4",
+        "description": "蛇身体不接触石灯笼",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C8",
+        "description": "背景为中式园林",
+        "points": 1,
+        "id": "q7"
+      },
+      {
+        "type": "C1",
+        "description": "无其他蛇",
+        "points": 1,
+        "id": "q8"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q8",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "蛇与竹石灯笼空间关系",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": "web/assets/results/CB-011.jpg",
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-012",
+    "title": "生肖蛇打太极",
+    "suite": "core",
+    "zodiac": "蛇",
+    "difficulty": 4,
+    "capabilities": [
+      "C1",
+      "C5",
+      "C8"
+    ],
+    "prompt": "一条拟人化的生肖蛇穿白色中式太极服，直立完成太极拳“云手”姿势：上身呈S形，一只拟人化手臂在胸前，另一只手臂向外展开。背景为清晨中式庭院。不要画成眼镜蛇攻击姿势。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "主体明确是蛇而非龙",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C3",
+        "description": "穿白色中式太极服",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C5",
+        "description": "主体以拟人方式直立",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C5",
+        "description": "双臂形成可识别的云手/太极动作",
+        "points": 2.5,
+        "id": "q3"
+      },
+      {
+        "type": "C8",
+        "description": "整体语境明显为太极练习",
+        "points": 1.5,
+        "id": "q4"
+      },
+      {
+        "type": "C8",
+        "description": "清晨中式庭院背景",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C1",
+        "description": "不表现眼镜蛇攻击姿态",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C6",
+        "description": "蛇体、服装和手臂结构基本连贯",
+        "points": 1,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": [
+          "q0"
+        ]
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "生肖蛇打太极",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-013",
+    "title": "四色四马计数",
+    "suite": "core",
+    "zodiac": "马",
+    "difficulty": 3,
+    "capabilities": [
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "prompt": "恰好四匹马横向排成一列，从左到右依次是黑马、白马、棕马、灰马。四匹马大小接近，互不遮挡。画面中不要出现第五匹马。",
+    "rubric": [
+      {
+        "type": "C2",
+        "description": "恰好四匹马",
+        "points": 2,
+        "id": "q0"
+      },
+      {
+        "type": "C3",
+        "description": "第一匹为黑色",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C3",
+        "description": "第二匹为白色",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C3",
+        "description": "第三匹为棕色",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C3",
+        "description": "第四匹为灰色",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C4",
+        "description": "左右顺序完全正确",
+        "points": 2,
+        "id": "q5"
+      },
+      {
+        "type": "C4",
+        "description": "四匹马互不遮挡且可独立计数",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C1",
+        "description": "无第五匹马",
+        "points": 1,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "四色四马计数",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-014",
+    "title": "马操作活字印刷",
+    "suite": "core",
+    "zodiac": "马",
+    "difficulty": 5,
+    "capabilities": [
+      "C1",
+      "C5",
+      "C6",
+      "C8"
+    ],
+    "prompt": "一匹拟人化棕马站在传统活字印刷工作台前。它用左前蹄从木制字盘中夹起一枚方形汉字活字，用右前蹄把另一枚活字放入排版框。桌面可见整齐排列的木活字，不要出现现代电脑或打印机。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "主体是一匹棕马",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C8",
+        "description": "工作台可识别为传统活字印刷场景",
+        "points": 1.5,
+        "id": "q1"
+      },
+      {
+        "type": "C8",
+        "description": "存在木制字盘和多枚方形活字",
+        "points": 1.5,
+        "id": "q2"
+      },
+      {
+        "type": "C5",
+        "description": "左前蹄从字盘夹起一枚活字",
+        "points": 1.5,
+        "id": "q3"
+      },
+      {
+        "type": "C5",
+        "description": "右前蹄把另一枚活字放入排版框",
+        "points": 1.5,
+        "id": "q4"
+      },
+      {
+        "type": "C6",
+        "description": "两个动作对象未互换且关系清楚",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C8",
+        "description": "无现代电脑/打印机",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C1",
+        "description": "无其他动物",
+        "points": 1,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": []
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "马操作活字印刷",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-015",
+    "title": "绵羊与山羊区分",
+    "suite": "core",
+    "zodiac": "羊",
+    "difficulty": 3,
+    "capabilities": [
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "prompt": "草地上恰好两只羊类动物：左边是一只白色绵羊，毛发蓬松卷曲；右边是一只黑色山羊，有明显胡须和向后弯的角。两者完整可见，不要出现第三只羊。",
+    "rubric": [
+      {
+        "type": "C2",
+        "description": "恰好两只羊类动物",
+        "points": 1.5,
+        "id": "q0"
+      },
+      {
+        "type": "C1",
+        "description": "左侧可识别为绵羊",
+        "points": 1.5,
+        "id": "q1"
+      },
+      {
+        "type": "C3",
+        "description": "绵羊为白色且毛发蓬松卷曲",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C1",
+        "description": "右侧可识别为山羊",
+        "points": 1.5,
+        "id": "q3"
+      },
+      {
+        "type": "C3",
+        "description": "山羊为黑色",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C1",
+        "description": "山羊具有胡须和后弯角",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C4",
+        "description": "绵羊在左、山羊在右",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C1",
+        "description": "无第三只羊",
+        "points": 1,
+        "id": "q7"
+      },
+      {
+        "type": "C4",
+        "description": "两者均完整可见",
+        "points": 0.5,
+        "id": "q8"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": [
+          "q1"
+        ]
+      },
+      {
+        "id": "q1",
+        "depends_on": []
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q1"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q1"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q1"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q1"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q1"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      },
+      {
+        "id": "q8",
+        "depends_on": [
+          "q1"
+        ]
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "绵羊与山羊区分",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-016",
+    "title": "白羊弹琵琶",
+    "suite": "core",
+    "zodiac": "羊",
+    "difficulty": 3,
+    "capabilities": [
+      "C1",
+      "C5",
+      "C8"
+    ],
+    "prompt": "一只拟人化白色绵羊坐着演奏中国琵琶。琵琶竖抱在胸前，左手按住琴颈，右手在琴弦处拨弦。背景为传统中式室内。不要画成吉他。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "主体为一只白色绵羊",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C8",
+        "description": "乐器明确为中国琵琶",
+        "points": 2,
+        "id": "q1"
+      },
+      {
+        "type": "C4",
+        "description": "琵琶竖抱在胸前",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C5",
+        "description": "左手位于琴颈执行按弦",
+        "points": 1.5,
+        "id": "q3"
+      },
+      {
+        "type": "C5",
+        "description": "右手位于弦区执行拨弦",
+        "points": 1.5,
+        "id": "q4"
+      },
+      {
+        "type": "C5",
+        "description": "整体动作明确为演奏琵琶",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C8",
+        "description": "背景具有传统中式室内特征",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C8",
+        "description": "不出现吉他替代",
+        "points": 1,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "白羊弹琵琶",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-017",
+    "title": "猴子刺绣牡丹",
+    "suite": "core",
+    "zodiac": "猴",
+    "difficulty": 4,
+    "capabilities": [
+      "C1",
+      "C5",
+      "C6",
+      "C8"
+    ],
+    "prompt": "一只真实比例的猴子坐在传统中式刺绣架前，左手扶着绣绷，右手拿针线，正在白色丝绸上刺绣一朵红色牡丹。不要画成猴子拿毛笔绘画。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现一只猴子",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C8",
+        "description": "存在传统刺绣架和绣绷",
+        "points": 1.5,
+        "id": "q1"
+      },
+      {
+        "type": "C5",
+        "description": "左手扶绣绷",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C5",
+        "description": "右手拿针线",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C5",
+        "description": "动作明确为刺绣而非绘画",
+        "points": 2,
+        "id": "q4"
+      },
+      {
+        "type": "C3",
+        "description": "材料为白色丝绸",
+        "points": 0.5,
+        "id": "q5"
+      },
+      {
+        "type": "C3",
+        "description": "图案为红色牡丹",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C8",
+        "description": "传统中式室内语境",
+        "points": 1,
+        "id": "q7"
+      },
+      {
+        "type": "C8",
+        "description": "不出现毛笔作画替代",
+        "points": 1,
+        "id": "q8"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q8",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "猴子刺绣牡丹",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-018",
+    "title": "双猴琴茶动作绑定",
+    "suite": "core",
+    "zodiac": "猴",
+    "difficulty": 4,
+    "capabilities": [
+      "C1",
+      "C4",
+      "C5",
+      "C6",
+      "C8"
+    ],
+    "prompt": "中式书房里有两只猴子。左边猴子坐着弹古琴，古琴横放在桌上；右边猴子站着从紫砂壶向一只小茶杯倒茶。两只猴子的动作不能互换。",
+    "rubric": [
+      {
+        "type": "C2",
+        "description": "恰好两只猴子",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C4",
+        "description": "弹琴猴在左、倒茶猴在右",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C8",
+        "description": "左侧乐器明确为横置古琴",
+        "points": 1.5,
+        "id": "q2"
+      },
+      {
+        "type": "C5",
+        "description": "左猴执行弹古琴动作",
+        "points": 1.5,
+        "id": "q3"
+      },
+      {
+        "type": "C8",
+        "description": "右猴使用紫砂壶和小茶杯",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C5",
+        "description": "右猴执行倒茶动作且茶水流向茶杯",
+        "points": 1.5,
+        "id": "q5"
+      },
+      {
+        "type": "C6",
+        "description": "两只猴子的动作未互换",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C8",
+        "description": "中式书房语境成立",
+        "points": 0.5,
+        "id": "q7"
+      },
+      {
+        "type": "C1",
+        "description": "无其他动物",
+        "points": 1,
+        "id": "q8"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q8",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "双猴琴茶动作绑定",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-019",
+    "title": "公鸡划龙舟猴击鼓",
+    "suite": "core",
+    "zodiac": "鸡",
+    "difficulty": 4,
+    "capabilities": [
+      "C1",
+      "C4",
+      "C5",
+      "C6",
+      "C8"
+    ],
+    "prompt": "端午节河面上，一只公鸡站在传统龙舟中部，双翅握着一支船桨正在划船；一只猴子坐在船头，双手用鼓槌敲打一面红色大鼓。船上只出现这两只生肖动物。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现一只公鸡",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C4",
+        "description": "公鸡位于龙舟中部",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C5",
+        "description": "公鸡明确持桨并执行划船动作",
+        "points": 2,
+        "id": "q2"
+      },
+      {
+        "type": "C1",
+        "description": "出现一只猴子",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C4",
+        "description": "猴子位于船头",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C5",
+        "description": "猴子用鼓槌击打一面红鼓",
+        "points": 2,
+        "id": "q5"
+      },
+      {
+        "type": "C8",
+        "description": "船为可识别的传统龙舟",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C1",
+        "description": "船上无其他生肖动物",
+        "points": 1,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "公鸡划龙舟猴击鼓",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-020",
+    "title": "鸡狗猪三体空间关系",
+    "suite": "core",
+    "zodiac": "鸡",
+    "difficulty": 4,
+    "capabilities": [
+      "C1",
+      "C4",
+      "C6"
+    ],
+    "prompt": "中式院落中只有三只动物：一只公鸡、一只黄狗和一只粉色猪。黄狗位于画面中央，公鸡站在黄狗右侧，粉色猪站在黄狗后方，并且猪不能遮挡黄狗。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "恰好三只动物",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C1",
+        "description": "公鸡、黄狗、粉猪三种主体均正确",
+        "points": 2,
+        "id": "q1"
+      },
+      {
+        "type": "C4",
+        "description": "黄狗位于画面中央",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C4",
+        "description": "公鸡位于黄狗右侧",
+        "points": 2,
+        "id": "q3"
+      },
+      {
+        "type": "C4",
+        "description": "粉猪位于黄狗后方",
+        "points": 2,
+        "id": "q4"
+      },
+      {
+        "type": "C4",
+        "description": "猪不遮挡黄狗",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C8",
+        "description": "背景为中式院落",
+        "points": 0.5,
+        "id": "q6"
+      },
+      {
+        "type": "C1",
+        "description": "无其他动物",
+        "points": 0.5,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "鸡狗猪三体空间关系",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-021",
+    "title": "柴犬穿舞狮服",
+    "suite": "core",
+    "zodiac": "狗",
+    "difficulty": 4,
+    "capabilities": [
+      "C1",
+      "C6",
+      "C8"
+    ],
+    "prompt": "一只柴犬穿着传统南狮表演服装站立，但柴犬自己的脸必须从打开的狮头下方清楚露出，能同时看见狗脸和狮头。背景为春节街道。不要把柴犬完全变成一只狮子。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "主体可明确识别为柴犬",
+        "points": 2,
+        "id": "q0"
+      },
+      {
+        "type": "C8",
+        "description": "存在可识别的传统南狮狮头",
+        "points": 1.5,
+        "id": "q1"
+      },
+      {
+        "type": "C8",
+        "description": "存在与狮头配套的舞狮服装",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C6",
+        "description": "狗脸与狮头能同时清楚看见",
+        "points": 2,
+        "id": "q3"
+      },
+      {
+        "type": "C6",
+        "description": "狮头位于狗头上方而非取代狗头",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C8",
+        "description": "春节街道语境成立",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C1",
+        "description": "未把主体完全变成狮子",
+        "points": 1.5,
+        "id": "q6"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "柴犬穿舞狮服",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-022",
+    "title": "狗写“春”字",
+    "suite": "core",
+    "zodiac": "狗",
+    "difficulty": 4,
+    "capabilities": [
+      "C1",
+      "C5",
+      "C7",
+      "C8"
+    ],
+    "prompt": "一只黄狗坐在书案前，右前爪握毛笔，正在正方形红纸中央书写一个清晰、完整、正确的黑色汉字“春”。纸上除“春”字外不要出现其他文字。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现一只黄狗",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C5",
+        "description": "右前爪明确握毛笔",
+        "points": 1.5,
+        "id": "q1"
+      },
+      {
+        "type": "C5",
+        "description": "毛笔尖与红纸形成书写关系",
+        "points": 1.5,
+        "id": "q2"
+      },
+      {
+        "type": "C3",
+        "description": "纸为正方形红纸",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C7",
+        "description": "“春”字字形完全正确",
+        "points": 3,
+        "id": "q4"
+      },
+      {
+        "type": "C7",
+        "description": "纸上无其他可读文字",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C8",
+        "description": "书案/毛笔构成中国书法语境",
+        "points": 1,
+        "id": "q6"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": []
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      }
+    ],
+    "scene_spec": {
+      "kind": "explicit",
+      "entities": [
+        {
+          "id": "dog",
+          "label": "黄狗",
+          "type": "zodiac",
+          "x": 32,
+          "y": 58
+        },
+        {
+          "id": "paper",
+          "label": "正方形红纸",
+          "type": "text-surface",
+          "x": 66,
+          "y": 56
+        }
+      ],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "dog",
+          "to": "paper",
+          "label": "毛笔书写"
+        }
+      ],
+      "texts": [
+        {
+          "id": "t1",
+          "text": "春",
+          "x": 66,
+          "y": 56
+        }
+      ],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-023",
+    "title": "猪兔包饺子动作绑定",
+    "suite": "core",
+    "zodiac": "猪",
+    "difficulty": 4,
+    "capabilities": [
+      "C1",
+      "C5",
+      "C6",
+      "C8"
+    ],
+    "prompt": "春节厨房里，一只粉色猪和一只白兔一起包饺子。左侧粉猪用擀面杖擀一张圆形饺子皮；右侧白兔用勺子把肉馅放到另一张饺子皮中央。两者动作不能互换。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现粉色猪和白兔且仅这两只动物",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C4",
+        "description": "猪在左、兔在右",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C5",
+        "description": "猪使用擀面杖擀圆形饺子皮",
+        "points": 2,
+        "id": "q2"
+      },
+      {
+        "type": "C5",
+        "description": "兔使用勺子把肉馅放到另一张皮中央",
+        "points": 2,
+        "id": "q3"
+      },
+      {
+        "type": "C6",
+        "description": "两种动作未互换",
+        "points": 1.5,
+        "id": "q4"
+      },
+      {
+        "type": "C8",
+        "description": "饺子皮、肉馅等中国饺子制作语境清楚",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C8",
+        "description": "春节厨房语境成立",
+        "points": 0.5,
+        "id": "q6"
+      },
+      {
+        "type": "C6",
+        "description": "两套工具与动作对象没有混淆",
+        "points": 1,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "猪兔包饺子动作绑定",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-024",
+    "title": "双灯笼中文与位置",
+    "suite": "core",
+    "zodiac": "猪",
+    "difficulty": 5,
+    "capabilities": [
+      "C1",
+      "C4",
+      "C7",
+      "C8"
+    ],
+    "prompt": "一只粉色猪站在传统中式牌楼正下方。牌楼左侧悬挂一盏红灯笼，正面只写金色汉字“福”；牌楼右侧悬挂另一盏红灯笼，正面只写金色汉字“春”。两个字都必须清楚正确，左右不能互换。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现一只粉色猪",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C8",
+        "description": "出现传统中式牌楼",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C4",
+        "description": "猪位于牌楼正下方",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C4",
+        "description": "左侧存在一盏红灯笼",
+        "points": 0.5,
+        "id": "q3"
+      },
+      {
+        "type": "C7",
+        "description": "左灯笼正确写“福”",
+        "points": 2,
+        "id": "q4"
+      },
+      {
+        "type": "C4",
+        "description": "右侧存在一盏红灯笼",
+        "points": 0.5,
+        "id": "q5"
+      },
+      {
+        "type": "C7",
+        "description": "右灯笼正确写“春”",
+        "points": 2,
+        "id": "q6"
+      },
+      {
+        "type": "C7",
+        "description": "福/春左右未互换",
+        "points": 1,
+        "id": "q7"
+      },
+      {
+        "type": "C7",
+        "description": "无其他可读文字",
+        "points": 1,
+        "id": "q8"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q8",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "双灯笼中文与位置",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-A01",
+    "title": "兔骑虎 + 福字灯笼",
+    "suite": "anchor",
+    "zodiac": "兔/虎",
+    "difficulty": 4,
+    "capabilities": [
+      "C3",
+      "C5",
+      "C7",
+      "C8"
+    ],
+    "prompt": "一只白色兔子骑在一只黑色老虎背上。兔子右手提着一盏红色灯笼，灯笼正面清楚写着一个金色汉字“福”。它们正在穿过一座传统中式牌楼。画面中不要出现其他动物。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现且仅出现一只兔子",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C3",
+        "description": "兔子为白色",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C1",
+        "description": "出现且仅出现一只老虎",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C3",
+        "description": "老虎主体呈黑色",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C5",
+        "description": "兔子明确骑在老虎背上",
+        "points": 2,
+        "id": "q4"
+      },
+      {
+        "type": "C5",
+        "description": "兔子右手持红灯笼",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C7",
+        "description": "灯笼正确写出“福”",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C8",
+        "description": "出现传统中式牌楼",
+        "points": 1,
+        "id": "q7"
+      },
+      {
+        "type": "C1",
+        "description": "无其他动物",
+        "points": 1,
+        "id": "q8"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q8",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "兔骑虎 + 福字灯笼",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-A02",
+    "title": "中国舞龙 vs 西方龙",
+    "suite": "anchor",
+    "zodiac": "龙",
+    "difficulty": 4,
+    "capabilities": [
+      "C6",
+      "C8"
+    ],
+    "prompt": "春节庙会上，一支传统中国舞龙队正在表演。舞龙是一条细长、无翅膀的中国龙，由至少六名表演者分别举着长杆共同操控。画面中不要出现西方龙，不要出现巨大蝙蝠状翅膀。",
+    "rubric": [
+      {
+        "type": "C8",
+        "description": "主体明确是中国传统龙",
+        "points": 2,
+        "id": "q0"
+      },
+      {
+        "type": "C8",
+        "description": "龙身细长连续",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C8",
+        "description": "无巨大西式翅膀",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C2",
+        "description": "至少六名表演者",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C6",
+        "description": "多人通过长杆共同操控龙身",
+        "points": 2,
+        "id": "q4"
+      },
+      {
+        "type": "C8",
+        "description": "场景具有春节庙会特征",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C1",
+        "description": "无额外西方龙",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C6",
+        "description": "整体构图关系清楚",
+        "points": 1,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": [
+          "q3"
+        ]
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q3"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": []
+      },
+      {
+        "id": "q3",
+        "depends_on": []
+      },
+      {
+        "id": "q4",
+        "depends_on": []
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q3"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": []
+      },
+      {
+        "id": "q7",
+        "depends_on": [
+          "q3"
+        ]
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "中国舞龙 vs 西方龙",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-A03",
+    "title": "鸡划龙舟，猴击鼓",
+    "suite": "anchor",
+    "zodiac": "鸡/猴",
+    "difficulty": 4,
+    "capabilities": [
+      "C4",
+      "C5",
+      "C8"
+    ],
+    "prompt": "端午节河面上，一只公鸡站在一条传统龙舟的中部，双翅握着一支船桨正在划船；一只猴子坐在船头，双手用鼓槌敲打一面红色大鼓。船上只出现这两只生肖动物。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现一只公鸡",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C4",
+        "description": "公鸡位于龙舟中部",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C5",
+        "description": "公鸡明确持桨并执行划船动作",
+        "points": 2,
+        "id": "q2"
+      },
+      {
+        "type": "C1",
+        "description": "出现一只猴子",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C4",
+        "description": "猴子位于船头",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C5",
+        "description": "猴子用鼓槌击打一面红鼓",
+        "points": 2,
+        "id": "q5"
+      },
+      {
+        "type": "C8",
+        "description": "船为可识别的传统龙舟",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C1",
+        "description": "无其他生肖动物",
+        "points": 1,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "鸡划龙舟，猴击鼓",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-A04",
+    "title": "猴子刺绣牡丹",
+    "suite": "anchor",
+    "zodiac": "猴",
+    "difficulty": 3,
+    "capabilities": [
+      "C5",
+      "C6",
+      "C8"
+    ],
+    "prompt": "一只真实比例的猴子坐在传统中式刺绣架前，左手扶着绣绷，右手拿针线，正在一块白色丝绸上刺绣一朵红色牡丹。场景为传统中式室内，不要画成猴子拿毛笔绘画。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "出现一只猴子",
+        "points": 1,
+        "id": "q0"
+      },
+      {
+        "type": "C8",
+        "description": "猴子坐在刺绣架前",
+        "points": 1,
+        "id": "q1"
+      },
+      {
+        "type": "C5",
+        "description": "左手扶绣绷",
+        "points": 1,
+        "id": "q2"
+      },
+      {
+        "type": "C5",
+        "description": "右手拿针线",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C5",
+        "description": "动作明确为刺绣而非绘画",
+        "points": 2,
+        "id": "q4"
+      },
+      {
+        "type": "C3",
+        "description": "材料为白色丝绸",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C3",
+        "description": "图案为红色牡丹",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C8",
+        "description": "场景具有传统中式室内特征",
+        "points": 1,
+        "id": "q7"
+      },
+      {
+        "type": "C8",
+        "description": "不出现毛笔作画替代",
+        "points": 1,
+        "id": "q8"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q5",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q6",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q7",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q8",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "generic",
+      "entities": [
+        {
+          "id": "subject",
+          "label": "猴子刺绣牡丹",
+          "type": "case"
+        }
+      ],
+      "relations": [],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-A05",
+    "title": "十二生肖全家福",
+    "suite": "anchor",
+    "zodiac": "全生肖",
+    "difficulty": 5,
+    "capabilities": [
+      "C1",
+      "C2",
+      "C8"
+    ],
+    "prompt": "传统中国红色剪纸风格。十二生肖鼠、牛、虎、兔、龙、蛇、马、羊、猴、鸡、狗、猪各出现恰好一只，共十二只，围成一个完整圆环。不要重复任何生肖，不要遗漏任何生肖，不要加入猫、熊或其他动物。",
+    "rubric": [
+      {
+        "type": "C1",
+        "description": "鼠、牛、虎均出现且各一只",
+        "points": 1.5,
+        "id": "q0"
+      },
+      {
+        "type": "C1",
+        "description": "兔、龙、蛇均出现且各一只",
+        "points": 1.5,
+        "id": "q1"
+      },
+      {
+        "type": "C1",
+        "description": "马、羊、猴均出现且各一只",
+        "points": 1.5,
+        "id": "q2"
+      },
+      {
+        "type": "C1",
+        "description": "鸡、狗、猪均出现且各一只",
+        "points": 1.5,
+        "id": "q3"
+      },
+      {
+        "type": "C2",
+        "description": "总数恰好12",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C2",
+        "description": "无生肖重复",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C1",
+        "description": "无额外动物",
+        "points": 1,
+        "id": "q6"
+      },
+      {
+        "type": "C4",
+        "description": "构成完整圆环",
+        "points": 0.5,
+        "id": "q7"
+      },
+      {
+        "type": "C8",
+        "description": "红色中国剪纸视觉语言成立",
+        "points": 0.5,
+        "id": "q8"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q2",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q3",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q4",
+        "depends_on": []
+      },
+      {
+        "id": "q5",
+        "depends_on": []
+      },
+      {
+        "id": "q6",
+        "depends_on": []
+      },
+      {
+        "id": "q7",
+        "depends_on": [
+          "q0"
+        ]
+      },
+      {
+        "id": "q8",
+        "depends_on": [
+          "q0"
+        ]
+      }
+    ],
+    "scene_spec": {
+      "kind": "explicit",
+      "entities": [
+        {
+          "id": "z1",
+          "label": "鼠",
+          "type": "zodiac",
+          "x": 84,
+          "y": 50
+        },
+        {
+          "id": "z2",
+          "label": "牛",
+          "type": "zodiac",
+          "x": 79.44486372867092,
+          "y": 67
+        },
+        {
+          "id": "z3",
+          "label": "虎",
+          "type": "zodiac",
+          "x": 67,
+          "y": 79.44486372867091
+        },
+        {
+          "id": "z4",
+          "label": "兔",
+          "type": "zodiac",
+          "x": 50,
+          "y": 84
+        },
+        {
+          "id": "z5",
+          "label": "龙",
+          "type": "zodiac",
+          "x": 33.00000000000001,
+          "y": 79.44486372867092
+        },
+        {
+          "id": "z6",
+          "label": "蛇",
+          "type": "zodiac",
+          "x": 20.555136271329083,
+          "y": 67
+        },
+        {
+          "id": "z7",
+          "label": "马",
+          "type": "zodiac",
+          "x": 16,
+          "y": 50.00000000000001
+        },
+        {
+          "id": "z8",
+          "label": "羊",
+          "type": "zodiac",
+          "x": 20.555136271329086,
+          "y": 33
+        },
+        {
+          "id": "z9",
+          "label": "猴",
+          "type": "zodiac",
+          "x": 32.999999999999986,
+          "y": 20.555136271329097
+        },
+        {
+          "id": "z10",
+          "label": "鸡",
+          "type": "zodiac",
+          "x": 49.99999999999999,
+          "y": 16
+        },
+        {
+          "id": "z11",
+          "label": "狗",
+          "type": "zodiac",
+          "x": 67,
+          "y": 20.555136271329086
+        },
+        {
+          "id": "z12",
+          "label": "猪",
+          "type": "zodiac",
+          "x": 79.4448637286709,
+          "y": 32.999999999999986
+        }
+      ],
+      "relations": [
+        {
+          "id": "ring",
+          "from": "z1",
+          "to": "z12",
+          "label": "完整圆环"
+        }
+      ],
+      "texts": [],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  },
+  {
+    "id": "CB-A06",
+    "title": "中文春联",
+    "suite": "anchor",
+    "zodiac": "无",
+    "difficulty": 4,
+    "capabilities": [
+      "C7",
+      "C8"
+    ],
+    "prompt": "正面视角的传统中式宅院大门。门左右各贴一条竖向红色春联：右侧上联清楚写“春风入户”，左侧下联清楚写“喜气盈门”；门上方横批清楚写“万事如意”。除这三处文字外不要出现其他可读文字。",
+    "rubric": [
+      {
+        "type": "C7",
+        "description": "“春风入户”四字全部正确",
+        "points": 2,
+        "id": "q0"
+      },
+      {
+        "type": "C7",
+        "description": "“喜气盈门”四字全部正确",
+        "points": 2,
+        "id": "q1"
+      },
+      {
+        "type": "C7",
+        "description": "“万事如意”四字全部正确",
+        "points": 2,
+        "id": "q2"
+      },
+      {
+        "type": "C4",
+        "description": "上联位于画面右侧并竖排",
+        "points": 1,
+        "id": "q3"
+      },
+      {
+        "type": "C4",
+        "description": "下联位于画面左侧并竖排",
+        "points": 1,
+        "id": "q4"
+      },
+      {
+        "type": "C4",
+        "description": "横批位于门上方并横排",
+        "points": 1,
+        "id": "q5"
+      },
+      {
+        "type": "C7",
+        "description": "无额外可读文字",
+        "points": 0.5,
+        "id": "q6"
+      },
+      {
+        "type": "C8",
+        "description": "场景为传统中式宅院大门",
+        "points": 0.5,
+        "id": "q7"
+      }
+    ],
+    "evaluation_graph": [
+      {
+        "id": "q0",
+        "depends_on": []
+      },
+      {
+        "id": "q1",
+        "depends_on": []
+      },
+      {
+        "id": "q2",
+        "depends_on": []
+      },
+      {
+        "id": "q3",
+        "depends_on": []
+      },
+      {
+        "id": "q4",
+        "depends_on": []
+      },
+      {
+        "id": "q5",
+        "depends_on": []
+      },
+      {
+        "id": "q6",
+        "depends_on": []
+      },
+      {
+        "id": "q7",
+        "depends_on": []
+      }
+    ],
+    "scene_spec": {
+      "kind": "explicit",
+      "entities": [
+        {
+          "id": "gate",
+          "label": "中式宅院大门",
+          "type": "architecture",
+          "x": 50,
+          "y": 52
+        }
+      ],
+      "relations": [],
+      "texts": [
+        {
+          "id": "t1",
+          "text": "春风入户",
+          "x": 68,
+          "y": 48
+        },
+        {
+          "id": "t2",
+          "text": "喜气盈门",
+          "x": 32,
+          "y": 48
+        },
+        {
+          "id": "t3",
+          "text": "万事如意",
+          "x": 50,
+          "y": 20
+        }
+      ],
+      "rubric_nodes": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ]
+    },
+    "result": {
+      "state": "pending",
+      "total_score": null,
+      "result_image": null,
+      "atomic_scores": null
+    }
+  }
+]
