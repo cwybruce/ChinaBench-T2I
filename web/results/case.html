@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ChinaBench-T2I · Evaluation Viewer</title>
+  <link rel="stylesheet" href="../css/eval-viewer.css">
+</head>
+<body>
+  <main class="app-shell" id="app" aria-live="polite">
+    <header class="topbar">
+      <div>
+        <a class="back-link" href="./index.html">← Results</a>
+        <p class="eyebrow">CHINABENCH-T2I · V0.1</p>
+        <h1 id="caseTitle">Loading benchmark case…</h1>
+        <div id="caseBadges" class="badges"></div>
+      </div>
+      <div class="mode-switch" role="tablist" aria-label="Evidence view">
+        <button class="mode-button is-active" data-view="spec" role="tab" aria-selected="true">SPEC ILLUSTRATION</button>
+        <button class="mode-button" data-view="result" role="tab" aria-selected="false">MODEL OUTPUT</button>
+      </div>
+    </header>
+
+    <section id="errorPanel" class="error-panel" hidden></section>
+
+    <div class="viewer-grid" id="viewerGrid">
+      <section class="visual-card card">
+        <div class="visual-head">
+          <div>
+            <span class="view-label" id="viewLabel">SPEC ILLUSTRATION</span>
+            <span class="view-note" id="viewNote">HTML/CSS/SVG · not model evidence</span>
+          </div>
+          <span class="phase-chip" id="phaseChip">READY</span>
+        </div>
+        <div class="visual-stage" id="visualStage">
+          <div id="specScene" class="spec-scene"></div>
+          <div id="resultScene" class="result-scene" hidden>
+            <img id="resultImage" alt="Model output for the selected ChinaBench case">
+            <div id="resultPlaceholder" class="result-placeholder">暂无真实模型输出</div>
+          </div>
+          <div class="scan-line" aria-hidden="true"></div>
+        </div>
+        <div class="timeline" aria-label="Evaluation progress"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </section>
+
+      <section class="detail-column">
+        <article class="card prompt-card">
+          <div class="section-kicker">PROMPT</div>
+          <p id="promptText" class="prompt-text"></p>
+        </article>
+
+        <article class="card evaluation-card">
+          <div class="evaluation-head">
+            <div>
+              <div class="section-kicker">ATOMIC CHECKLIST</div>
+              <h2 id="phaseTitle">等待开始</h2>
+            </div>
+            <div class="score-block">
+              <strong id="scoreValue">—</strong><span>/ 10</span>
+              <small id="scoreState">待复核</small>
+            </div>
+          </div>
+          <div id="checklist" class="checklist"></div>
+        </article>
+
+        <article class="card controls-card">
+          <div class="controls" aria-label="Animation controls">
+            <button id="stepPrevButton" aria-keyshortcuts="ArrowLeft">← 上一步</button>
+            <button id="playButton" class="primary" aria-keyshortcuts="Space">▶ 播放</button>
+            <button id="pauseButton">Ⅱ 暂停</button>
+            <button id="stepNextButton" aria-keyshortcuts="ArrowRight">下一步 →</button>
+            <button id="resetButton" aria-keyshortcuts="Home">重置</button>
+          </div>
+          <label class="speed-control">速度
+            <select id="speedSelect" aria-label="Animation speed">
+              <option value="0.5">0.5×</option>
+              <option value="1" selected>1×</option>
+              <option value="2">2×</option>
+            </select>
+          </label>
+        </article>
+
+        <article class="card meta-card">
+          <div class="section-kicker">EVIDENCE & METADATA</div>
+          <dl id="metadata" class="metadata"></dl>
+          <p class="evidence-warning">SPEC ILLUSTRATION 只解释“这道题在测什么”。正式判分只能来自 MODEL OUTPUT。</p>
+        </article>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="../js/eval-viewer.js"></script>
+</body>
+</html>

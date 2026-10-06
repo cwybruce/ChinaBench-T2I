@@ -1,8 +1,10 @@
-name: Deploy ChinaBench to GitHub Pages
+name: Validate and deploy Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [main, 'feat/**']
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -11,35 +13,51 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run viewer tests
+        run: node --test tests/*.test.mjs
+      - name: Build derived viewer data
+        run: node scripts/build-viewer-data.mjs
+      - name: Validate derived viewer data
+        run: node scripts/validate-viewer.mjs web/data/cases-v0.1.json
+
   deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-      - name: Build public site
-        shell: bash
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build viewer data
+        run: node scripts/build-viewer-data.mjs
+      - name: Assemble static site
         run: |
-          mkdir -p _site/web _site/benchmark/v0.1
-          cp web/index.html _site/web/index.html
-          cp -r web/results _site/web/results
-          if [ -d web/assets ]; then cp -r web/assets _site/web/assets; fi
-          cp benchmark/v0.1/questions.json _site/benchmark/v0.1/questions.json
-          cp benchmark/v0.1/anchors.json _site/benchmark/v0.1/anchors.json
+          rm -rf _site
+          mkdir -p _site/results/chatgpt-image
           cp index.html _site/index.html
+          cp -r web _site/web
+          cp -r benchmark _site/benchmark
+          cp results/chatgpt-image/run-2026-10-06.json _site/results/chatgpt-image/run-2026-10-06.json
           touch _site/.nojekyll
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-      - name: Upload public site only
-        uses: actions/upload-pages-artifact@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-      - name: Deploy
+      - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
