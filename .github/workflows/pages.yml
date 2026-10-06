@@ -29,6 +29,7 @@ jobs:
           mkdir -p _site/web _site/benchmark/v0.1
           cp web/index.html _site/web/index.html
           cp -r web/results _site/web/results
+          cp -r web/assets _site/web/assets
           cp benchmark/v0.1/questions.json _site/benchmark/v0.1/questions.json
           cp benchmark/v0.1/anchors.json _site/benchmark/v0.1/anchors.json
           cp index.html _site/index.html
