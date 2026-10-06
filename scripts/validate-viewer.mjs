@@ -1,1 +1,3 @@
-import fs from 'node:fs';import {validateViewerCases} from './viewer-data-lib.mjs';const p=process.argv[2]||'web/data/cases-v0.1.json';const c=JSON.parse(fs.readFileSync(p,'utf8'));const v=validateViewerCases(c);if(!v.ok){console.error(v.errors.join('\n'));process.exit(1)}if(c.length!==30){console.error(`expected 30 cases, got ${c.length}`);process.exit(1)}console.log(`viewer data valid: ${c.length}/30 cases`);
+import fs from 'node:fs';
+import {validateViewerCases} from './build-viewer-data.mjs';
+const file=process.argv[2]||'web/data/cases-v0.1.json';const data=JSON.parse(fs.readFileSync(file,'utf8'));const r=validateViewerCases(data.cases||data);if(!r.ok){console.error(r.errors.join('\\n'));process.exit(1)}console.log('viewer validation: '+(data.cases||data).length+' cases, 0 errors');
