@@ -276,15 +276,44 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "老鼠拉二胡",
-          "type": "case"
+          "id": "mouse",
+          "label": "棕色老鼠",
+          "type": "zodiac",
+          "x": 38,
+          "y": 54
+        },
+        {
+          "id": "erhu",
+          "label": "二胡",
+          "type": "instrument",
+          "x": 62,
+          "y": 54
+        },
+        {
+          "id": "bow",
+          "label": "二胡弓",
+          "type": "prop",
+          "x": 65,
+          "y": 42
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "mouse",
+          "to": "erhu",
+          "label": "左手按弦"
+        },
+        {
+          "id": "r2",
+          "from": "mouse",
+          "to": "bow",
+          "label": "右手运弓"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -425,15 +454,31 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "黑牛在白马左侧",
-          "type": "case"
+          "id": "buffalo",
+          "label": "黑色水牛",
+          "type": "zodiac",
+          "x": 30,
+          "y": 55
+        },
+        {
+          "id": "horse",
+          "label": "白马",
+          "type": "animal",
+          "x": 70,
+          "y": 55
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "buffalo",
+          "to": "horse",
+          "label": "位于左侧 · 同向 · 不重叠"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -551,15 +596,44 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "水牛放燕子风筝",
-          "type": "case"
+          "id": "buffalo",
+          "label": "水牛",
+          "type": "zodiac",
+          "x": 36,
+          "y": 58
+        },
+        {
+          "id": "reel",
+          "label": "线轴",
+          "type": "prop",
+          "x": 45,
+          "y": 42
+        },
+        {
+          "id": "kite",
+          "label": "燕子风筝",
+          "type": "prop",
+          "x": 72,
+          "y": 22
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "buffalo",
+          "to": "reel",
+          "label": "嘴叼线轴"
+        },
+        {
+          "id": "r2",
+          "from": "reel",
+          "to": "kite",
+          "label": "连续风筝线连接"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -674,15 +748,51 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "双虎围巾属性绑定",
-          "type": "case"
+          "id": "t1",
+          "label": "左侧老虎",
+          "type": "zodiac",
+          "x": 32,
+          "y": 54
+        },
+        {
+          "id": "blue",
+          "label": "蓝围巾",
+          "type": "prop",
+          "x": 32,
+          "y": 38
+        },
+        {
+          "id": "t2",
+          "label": "右侧老虎",
+          "type": "zodiac",
+          "x": 68,
+          "y": 54
+        },
+        {
+          "id": "red",
+          "label": "红围巾",
+          "type": "prop",
+          "x": 68,
+          "y": 38
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "t1",
+          "to": "blue",
+          "label": "佩戴"
+        },
+        {
+          "id": "r2",
+          "from": "t2",
+          "to": "red",
+          "label": "佩戴"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -808,15 +918,44 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "老虎打中国鼓",
-          "type": "case"
+          "id": "tiger",
+          "label": "老虎",
+          "type": "zodiac",
+          "x": 38,
+          "y": 54
+        },
+        {
+          "id": "drum",
+          "label": "中国鼓 · 红鼓身金铆钉",
+          "type": "instrument",
+          "x": 66,
+          "y": 56
+        },
+        {
+          "id": "sticks",
+          "label": "两根鼓槌",
+          "type": "prop",
+          "x": 50,
+          "y": 38
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "tiger",
+          "to": "sticks",
+          "label": "双爪各持一根"
+        },
+        {
+          "id": "r2",
+          "from": "sticks",
+          "to": "drum",
+          "label": "同时击鼓"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -989,7 +1128,7 @@
         },
         {
           "id": "tray",
-          "label": "木托盘",
+          "label": "空木托盘",
           "type": "prop",
           "x": 63,
           "y": 66
@@ -1000,7 +1139,7 @@
           "id": "r1",
           "from": "rabbit1",
           "to": "cup",
-          "label": "倒茶"
+          "label": "从茶壶倒茶"
         },
         {
           "id": "r2",
@@ -1138,15 +1277,58 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "月宫玉兔捣药",
-          "type": "case"
+          "id": "rabbit",
+          "label": "白色玉兔",
+          "type": "zodiac",
+          "x": 42,
+          "y": 56
+        },
+        {
+          "id": "pestle",
+          "label": "长药杵",
+          "type": "prop",
+          "x": 52,
+          "y": 42
+        },
+        {
+          "id": "mortar",
+          "label": "石臼草药",
+          "type": "prop",
+          "x": 58,
+          "y": 62
+        },
+        {
+          "id": "moon",
+          "label": "满月",
+          "type": "environment",
+          "x": 76,
+          "y": 18
+        },
+        {
+          "id": "tree",
+          "label": "桂树",
+          "type": "environment",
+          "x": 22,
+          "y": 38
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "rabbit",
+          "to": "pestle",
+          "label": "双手握"
+        },
+        {
+          "id": "r2",
+          "from": "pestle",
+          "to": "mortar",
+          "label": "捣药"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -1260,15 +1442,31 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "中国龙形态辨识",
-          "type": "case"
+          "id": "dragon",
+          "label": "中国龙 · 细长龙身 · 无巨翼",
+          "type": "zodiac",
+          "x": 50,
+          "y": 48
+        },
+        {
+          "id": "clouds",
+          "label": "祥云",
+          "type": "environment",
+          "x": 50,
+          "y": 70
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "dragon",
+          "to": "clouds",
+          "label": "盘旋于云上"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -1409,15 +1607,57 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "龙与猴下中国象棋",
-          "type": "case"
+          "id": "dragon",
+          "label": "小型中国龙",
+          "type": "zodiac",
+          "x": 28,
+          "y": 56
+        },
+        {
+          "id": "board",
+          "label": "中国象棋棋盘",
+          "type": "prop",
+          "x": 50,
+          "y": 56
+        },
+        {
+          "id": "monkey",
+          "label": "猴子",
+          "type": "zodiac",
+          "x": 72,
+          "y": 56
+        },
+        {
+          "id": "piece",
+          "label": "红色圆棋子",
+          "type": "prop",
+          "x": 40,
+          "y": 42
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "dragon",
+          "to": "piece",
+          "label": "抬起红棋子"
+        },
+        {
+          "id": "r2",
+          "from": "dragon",
+          "to": "board",
+          "label": "下象棋"
+        },
+        {
+          "id": "r3",
+          "from": "monkey",
+          "to": "board",
+          "label": "观察棋局"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -1560,15 +1800,44 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "蛇与竹石灯笼空间关系",
-          "type": "case"
+          "id": "bamboo",
+          "label": "左侧竹子",
+          "type": "environment",
+          "x": 22,
+          "y": 48
+        },
+        {
+          "id": "snake",
+          "label": "绿色蛇",
+          "type": "zodiac",
+          "x": 30,
+          "y": 48
+        },
+        {
+          "id": "lantern",
+          "label": "右侧石灯笼",
+          "type": "architecture",
+          "x": 75,
+          "y": 48
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "snake",
+          "to": "bamboo",
+          "label": "盘绕"
+        },
+        {
+          "id": "r2",
+          "from": "snake",
+          "to": "lantern",
+          "label": "头朝向 · 身体不接触"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -1700,15 +1969,44 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "生肖蛇打太极",
-          "type": "case"
+          "id": "snake",
+          "label": "拟人生肖蛇 · S形直立",
+          "type": "zodiac",
+          "x": 48,
+          "y": 50
+        },
+        {
+          "id": "cloth",
+          "label": "白色太极服",
+          "type": "prop",
+          "x": 48,
+          "y": 34
+        },
+        {
+          "id": "court",
+          "label": "清晨中式庭院",
+          "type": "environment",
+          "x": 75,
+          "y": 70
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "snake",
+          "to": "cloth",
+          "label": "穿着"
+        },
+        {
+          "id": "r2",
+          "from": "snake",
+          "to": "court",
+          "label": "云手姿势 · 非攻击姿势"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -1838,15 +2136,45 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "四色四马计数",
-          "type": "case"
+          "id": "h1",
+          "label": "黑马",
+          "type": "zodiac",
+          "x": 18,
+          "y": 55
+        },
+        {
+          "id": "h2",
+          "label": "白马",
+          "type": "zodiac",
+          "x": 39,
+          "y": 55
+        },
+        {
+          "id": "h3",
+          "label": "棕马",
+          "type": "zodiac",
+          "x": 61,
+          "y": 55
+        },
+        {
+          "id": "h4",
+          "label": "灰马",
+          "type": "zodiac",
+          "x": 82,
+          "y": 55
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "h1",
+          "to": "h4",
+          "label": "从左到右一列 · 恰好四匹 · 互不遮挡"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -1974,15 +2302,51 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "马操作活字印刷",
-          "type": "case"
+          "id": "horse",
+          "label": "拟人棕马",
+          "type": "zodiac",
+          "x": 28,
+          "y": 52
+        },
+        {
+          "id": "tray",
+          "label": "木制字盘",
+          "type": "prop",
+          "x": 50,
+          "y": 38
+        },
+        {
+          "id": "type1",
+          "label": "方形汉字活字",
+          "type": "text-surface",
+          "x": 58,
+          "y": 46
+        },
+        {
+          "id": "frame",
+          "label": "排版框",
+          "type": "prop",
+          "x": 72,
+          "y": 58
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "horse",
+          "to": "type1",
+          "label": "左前蹄夹起"
+        },
+        {
+          "id": "r2",
+          "from": "horse",
+          "to": "frame",
+          "label": "右前蹄放入活字"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -2124,15 +2488,31 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "绵羊与山羊区分",
-          "type": "case"
+          "id": "sheep",
+          "label": "左侧白色绵羊 · 蓬松卷毛",
+          "type": "zodiac",
+          "x": 32,
+          "y": 55
+        },
+        {
+          "id": "goat",
+          "label": "右侧黑色山羊 · 胡须后弯角",
+          "type": "animal",
+          "x": 68,
+          "y": 55
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "sheep",
+          "to": "goat",
+          "label": "恰好两只 · 完整可见"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -2262,15 +2642,31 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "白羊弹琵琶",
-          "type": "case"
+          "id": "sheep",
+          "label": "白色绵羊",
+          "type": "zodiac",
+          "x": 34,
+          "y": 54
+        },
+        {
+          "id": "pipa",
+          "label": "中国琵琶",
+          "type": "instrument",
+          "x": 62,
+          "y": 52
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "sheep",
+          "to": "pipa",
+          "label": "竖抱 · 左手按颈 · 右手拨弦"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -2412,15 +2808,64 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "猴子刺绣牡丹",
-          "type": "case"
+          "id": "monkey",
+          "label": "真实比例猴子",
+          "type": "zodiac",
+          "x": 28,
+          "y": 55
+        },
+        {
+          "id": "frame",
+          "label": "中式刺绣架与绣绷",
+          "type": "prop",
+          "x": 55,
+          "y": 52
+        },
+        {
+          "id": "silk",
+          "label": "白色丝绸",
+          "type": "prop",
+          "x": 64,
+          "y": 55
+        },
+        {
+          "id": "peony",
+          "label": "红色牡丹刺绣",
+          "type": "prop",
+          "x": 66,
+          "y": 43
+        },
+        {
+          "id": "needle",
+          "label": "针线",
+          "type": "prop",
+          "x": 45,
+          "y": 40
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "monkey",
+          "to": "frame",
+          "label": "左手扶绣绷"
+        },
+        {
+          "id": "r2",
+          "from": "monkey",
+          "to": "needle",
+          "label": "右手拿针线"
+        },
+        {
+          "id": "r3",
+          "from": "needle",
+          "to": "peony",
+          "label": "刺绣牡丹"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -2564,15 +3009,58 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "双猴琴茶动作绑定",
-          "type": "case"
+          "id": "m1",
+          "label": "左侧猴子",
+          "type": "zodiac",
+          "x": 24,
+          "y": 55
+        },
+        {
+          "id": "guqin",
+          "label": "古琴 · 横放桌上",
+          "type": "instrument",
+          "x": 38,
+          "y": 58
+        },
+        {
+          "id": "m2",
+          "label": "右侧猴子",
+          "type": "zodiac",
+          "x": 72,
+          "y": 55
+        },
+        {
+          "id": "pot",
+          "label": "紫砂壶",
+          "type": "prop",
+          "x": 62,
+          "y": 42
+        },
+        {
+          "id": "cup",
+          "label": "小茶杯",
+          "type": "prop",
+          "x": 78,
+          "y": 68
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "m1",
+          "to": "guqin",
+          "label": "坐着弹古琴"
+        },
+        {
+          "id": "r2",
+          "from": "m2",
+          "to": "cup",
+          "label": "从紫砂壶倒茶"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -2704,15 +3192,58 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "公鸡划龙舟猴击鼓",
-          "type": "case"
+          "id": "boat",
+          "label": "传统龙舟",
+          "type": "vehicle",
+          "x": 50,
+          "y": 62
+        },
+        {
+          "id": "rooster",
+          "label": "公鸡 · 船中部",
+          "type": "zodiac",
+          "x": 48,
+          "y": 48
+        },
+        {
+          "id": "paddle",
+          "label": "船桨",
+          "type": "prop",
+          "x": 58,
+          "y": 48
+        },
+        {
+          "id": "monkey",
+          "label": "猴子 · 船头",
+          "type": "zodiac",
+          "x": 22,
+          "y": 50
+        },
+        {
+          "id": "drum",
+          "label": "红色大鼓",
+          "type": "instrument",
+          "x": 30,
+          "y": 36
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "rooster",
+          "to": "paddle",
+          "label": "双翅握桨划船"
+        },
+        {
+          "id": "r2",
+          "from": "monkey",
+          "to": "drum",
+          "label": "双手鼓槌击鼓"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -2841,15 +3372,44 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "鸡狗猪三体空间关系",
-          "type": "case"
+          "id": "dog",
+          "label": "中央黄狗",
+          "type": "zodiac",
+          "x": 50,
+          "y": 55
+        },
+        {
+          "id": "rooster",
+          "label": "黄狗右侧公鸡",
+          "type": "zodiac",
+          "x": 75,
+          "y": 55
+        },
+        {
+          "id": "pig",
+          "label": "黄狗后方粉色猪",
+          "type": "zodiac",
+          "x": 50,
+          "y": 28
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "rooster",
+          "to": "dog",
+          "label": "位于右侧"
+        },
+        {
+          "id": "r2",
+          "from": "pig",
+          "to": "dog",
+          "label": "位于后方且不遮挡"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -2968,15 +3528,38 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "柴犬穿舞狮服",
-          "type": "case"
+          "id": "dog",
+          "label": "柴犬 · 狗脸清楚露出",
+          "type": "zodiac",
+          "x": 48,
+          "y": 58
+        },
+        {
+          "id": "lion",
+          "label": "打开的传统南狮狮头",
+          "type": "prop",
+          "x": 48,
+          "y": 35
+        },
+        {
+          "id": "street",
+          "label": "春节街道",
+          "type": "environment",
+          "x": 75,
+          "y": 70
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "dog",
+          "to": "lion",
+          "label": "穿舞狮服但未变成狮子"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -3108,14 +3691,27 @@
           "type": "text-surface",
           "x": 66,
           "y": 56
+        },
+        {
+          "id": "brush",
+          "label": "毛笔",
+          "type": "prop",
+          "x": 48,
+          "y": 43
         }
       ],
       "relations": [
         {
           "id": "r1",
           "from": "dog",
+          "to": "brush",
+          "label": "右前爪握"
+        },
+        {
+          "id": "r2",
+          "from": "brush",
           "to": "paper",
-          "label": "毛笔书写"
+          "label": "书写"
         }
       ],
       "texts": [
@@ -3253,15 +3849,65 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "猪兔包饺子动作绑定",
-          "type": "case"
+          "id": "pig",
+          "label": "左侧粉猪",
+          "type": "zodiac",
+          "x": 28,
+          "y": 55
+        },
+        {
+          "id": "pin",
+          "label": "擀面杖",
+          "type": "prop",
+          "x": 40,
+          "y": 45
+        },
+        {
+          "id": "skin1",
+          "label": "圆形饺子皮",
+          "type": "prop",
+          "x": 42,
+          "y": 62
+        },
+        {
+          "id": "rabbit",
+          "label": "右侧白兔",
+          "type": "zodiac",
+          "x": 72,
+          "y": 55
+        },
+        {
+          "id": "spoon",
+          "label": "勺子肉馅",
+          "type": "prop",
+          "x": 62,
+          "y": 43
+        },
+        {
+          "id": "skin2",
+          "label": "另一张饺子皮",
+          "type": "prop",
+          "x": 65,
+          "y": 65
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "pig",
+          "to": "skin1",
+          "label": "用擀面杖擀皮"
+        },
+        {
+          "id": "r2",
+          "from": "rabbit",
+          "to": "skin2",
+          "label": "用勺放肉馅"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -3403,16 +4049,59 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "双灯笼中文与位置",
-          "type": "case"
+          "id": "pig",
+          "label": "粉色猪 · 牌楼正下方",
+          "type": "zodiac",
+          "x": 50,
+          "y": 64
+        },
+        {
+          "id": "gate",
+          "label": "传统中式牌楼",
+          "type": "architecture",
+          "x": 50,
+          "y": 36
+        },
+        {
+          "id": "left",
+          "label": "左侧红灯笼",
+          "type": "text-surface",
+          "x": 28,
+          "y": 42
+        },
+        {
+          "id": "right",
+          "label": "右侧红灯笼",
+          "type": "text-surface",
+          "x": 72,
+          "y": 42
         }
       ],
-      "relations": [],
-      "texts": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "pig",
+          "to": "gate",
+          "label": "站在正下方"
+        }
+      ],
+      "texts": [
+        {
+          "id": "t1",
+          "text": "福",
+          "x": 28,
+          "y": 42
+        },
+        {
+          "id": "t2",
+          "text": "春",
+          "x": 72,
+          "y": 42
+        }
+      ],
       "rubric_nodes": [
         "q0",
         "q1",
@@ -3554,16 +4243,65 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "兔骑虎 + 福字灯笼",
-          "type": "case"
+          "id": "rabbit",
+          "label": "白色兔子",
+          "type": "zodiac",
+          "x": 44,
+          "y": 40
+        },
+        {
+          "id": "tiger",
+          "label": "黑色老虎",
+          "type": "zodiac",
+          "x": 44,
+          "y": 62
+        },
+        {
+          "id": "lantern",
+          "label": "右手红灯笼",
+          "type": "text-surface",
+          "x": 65,
+          "y": 34
+        },
+        {
+          "id": "gate",
+          "label": "中式牌楼",
+          "type": "architecture",
+          "x": 78,
+          "y": 58
         }
       ],
-      "relations": [],
-      "texts": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "rabbit",
+          "to": "tiger",
+          "label": "骑在背上"
+        },
+        {
+          "id": "r2",
+          "from": "rabbit",
+          "to": "lantern",
+          "label": "右手提"
+        },
+        {
+          "id": "r3",
+          "from": "tiger",
+          "to": "gate",
+          "label": "穿过牌楼"
+        }
+      ],
+      "texts": [
+        {
+          "id": "t1",
+          "text": "福",
+          "x": 65,
+          "y": 34
+        }
+      ],
       "rubric_nodes": [
         "q0",
         "q1",
@@ -3687,15 +4425,72 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "中国舞龙 vs 西方龙",
-          "type": "case"
+          "id": "dragon",
+          "label": "细长无翅中国舞龙",
+          "type": "zodiac",
+          "x": 50,
+          "y": 35
+        },
+        {
+          "id": "p1",
+          "label": "表演者1",
+          "type": "animal",
+          "x": 15,
+          "y": 66
+        },
+        {
+          "id": "p2",
+          "label": "表演者2",
+          "type": "animal",
+          "x": 28,
+          "y": 66
+        },
+        {
+          "id": "p3",
+          "label": "表演者3",
+          "type": "animal",
+          "x": 41,
+          "y": 66
+        },
+        {
+          "id": "p4",
+          "label": "表演者4",
+          "type": "animal",
+          "x": 54,
+          "y": 66
+        },
+        {
+          "id": "p5",
+          "label": "表演者5",
+          "type": "animal",
+          "x": 67,
+          "y": 66
+        },
+        {
+          "id": "p6",
+          "label": "表演者6",
+          "type": "animal",
+          "x": 80,
+          "y": 66
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "p1",
+          "to": "dragon",
+          "label": "长杆共同操控"
+        },
+        {
+          "id": "r2",
+          "from": "p6",
+          "to": "dragon",
+          "label": "至少六人协同"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -3824,15 +4619,58 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "鸡划龙舟，猴击鼓",
-          "type": "case"
+          "id": "boat",
+          "label": "传统龙舟",
+          "type": "vehicle",
+          "x": 50,
+          "y": 62
+        },
+        {
+          "id": "rooster",
+          "label": "公鸡 · 船中部",
+          "type": "zodiac",
+          "x": 48,
+          "y": 48
+        },
+        {
+          "id": "paddle",
+          "label": "船桨",
+          "type": "prop",
+          "x": 58,
+          "y": 48
+        },
+        {
+          "id": "monkey",
+          "label": "猴子 · 船头",
+          "type": "zodiac",
+          "x": 22,
+          "y": 50
+        },
+        {
+          "id": "drum",
+          "label": "红色大鼓",
+          "type": "instrument",
+          "x": 30,
+          "y": 36
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "rooster",
+          "to": "paddle",
+          "label": "双翅握桨划船"
+        },
+        {
+          "id": "r2",
+          "from": "monkey",
+          "to": "drum",
+          "label": "双手鼓槌击鼓"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -3973,15 +4811,64 @@
       }
     ],
     "scene_spec": {
-      "kind": "generic",
+      "kind": "explicit",
       "entities": [
         {
-          "id": "subject",
-          "label": "猴子刺绣牡丹",
-          "type": "case"
+          "id": "monkey",
+          "label": "真实比例猴子",
+          "type": "zodiac",
+          "x": 28,
+          "y": 55
+        },
+        {
+          "id": "frame",
+          "label": "中式刺绣架与绣绷",
+          "type": "prop",
+          "x": 55,
+          "y": 52
+        },
+        {
+          "id": "silk",
+          "label": "白色丝绸",
+          "type": "prop",
+          "x": 64,
+          "y": 55
+        },
+        {
+          "id": "peony",
+          "label": "红色牡丹刺绣",
+          "type": "prop",
+          "x": 66,
+          "y": 43
+        },
+        {
+          "id": "needle",
+          "label": "针线",
+          "type": "prop",
+          "x": 45,
+          "y": 40
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "id": "r1",
+          "from": "monkey",
+          "to": "frame",
+          "label": "左手扶绣绷"
+        },
+        {
+          "id": "r2",
+          "from": "monkey",
+          "to": "needle",
+          "label": "右手拿针线"
+        },
+        {
+          "id": "r3",
+          "from": "needle",
+          "to": "peony",
+          "label": "刺绣牡丹"
+        }
+      ],
       "texts": [],
       "rubric_nodes": [
         "q0",
@@ -4211,7 +5098,7 @@
           "id": "ring",
           "from": "z1",
           "to": "z12",
-          "label": "完整圆环"
+          "label": "十二生肖完整圆环"
         }
       ],
       "texts": [],
