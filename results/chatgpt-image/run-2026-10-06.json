@@ -2,7 +2,7 @@
   "benchmark": "ChinaBench-T2I",
   "version": "0.1",
   "run_id": "chatgpt-image-2026-10-06-v0",
-  "note": "Official run in progress. CB-001 through CB-011 have real first-image outputs and completed atomic scoring; remaining tests are pending generation.",
+  "note": "Official run in progress. CB-001 through CB-011 have real first-image outputs published; atomic scoring is pending manual review.",
   "results": [
     {
       "test_id": "CB-001",
@@ -14,60 +14,60 @@
       "generation_date": "2026-10-06",
       "selection_policy": "first_image",
       "evaluator_model": "GPT-5.6 Sol",
-      "status": "scored",
+      "status": "generated_pending_review",
       "atomic_scores": [
         {
           "description": "恰好出现三只老鼠",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "左侧老鼠为灰色",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "中间老鼠为白色",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "右侧老鼠为黑色",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "三只老鼠左右顺序正确",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "中间白鼠明确提着红灯笼",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "背景为可识别的传统中式庭院",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "无其他动物",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         }
       ],
-      "total_score": 10,
+      "total_score": null,
       "failure_notes": [],
-      "result_image": "web/assets/results/CB-001.png",
+      "result_image": "web/assets/results/CB-001.jpg",
       "generation_id": "8401de36-ff7f-401e-9ae7-f6cf29989a05"
     },
     {
@@ -80,60 +80,60 @@
       "generation_date": "2026-10-06",
       "selection_policy": "first_image",
       "evaluator_model": "GPT-5.6 Sol",
-      "status": "scored",
+      "status": "generated_pending_review",
       "atomic_scores": [
         {
           "description": "只出现一只棕色老鼠",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "乐器明确为二胡",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "左手位于琴杆并执行按弦动作",
           "points": 1.5,
-          "passed": true,
-          "awarded": 1.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "右手持弓执行拉奏动作",
           "points": 1.5,
-          "passed": true,
-          "awarded": 1.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "琴弓与二胡弦关系合理",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "老鼠坐在低矮木凳上",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "传统中式室内视觉成立",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "不出现小提琴/吉他等替代乐器",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         }
       ],
-      "total_score": 10,
+      "total_score": null,
       "failure_notes": [],
-      "result_image": "web/assets/results/CB-002.png",
+      "result_image": "web/assets/results/CB-002.jpg",
       "generation_id": "add0e43c-e16a-4fc6-b183-01924e91dcaa"
     },
     {
@@ -146,66 +146,66 @@
       "generation_date": "2026-10-06",
       "selection_policy": "first_image",
       "evaluator_model": "GPT-5.6 Sol",
-      "status": "scored",
+      "status": "generated_pending_review",
       "atomic_scores": [
         {
           "description": "出现一头可识别的水牛",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "水牛为黑色",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "出现一匹马",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "马为白色",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "水牛位于白马左侧",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "两者面向同一方向",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "两者彼此不重叠",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "背景为中国南方水田",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "无其他大型动物",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         }
       ],
-      "total_score": 10,
+      "total_score": null,
       "failure_notes": [],
-      "result_image": "web/assets/results/CB-003.png",
+      "result_image": "web/assets/results/CB-003.jpg",
       "generation_id": "990e8e94-c8bc-49ad-a966-948e78b06253"
     },
     {
@@ -218,54 +218,54 @@
       "generation_date": "2026-10-06",
       "selection_policy": "first_image",
       "evaluator_model": "GPT-5.6 Sol",
-      "status": "scored",
+      "status": "generated_pending_review",
       "atomic_scores": [
         {
           "description": "主体是一头水牛",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "风筝明确为传统燕子造型",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "水牛嘴部明确咬住线轴",
           "points": 1.5,
-          "passed": true,
-          "awarded": 1.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "线从线轴连续连接到风筝",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "整体关系明确表现为水牛在放风筝",
           "points": 1.5,
-          "passed": true,
-          "awarded": 1.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "春季中国田野语境成立",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "无人类帮助",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         }
       ],
-      "total_score": 10,
+      "total_score": null,
       "failure_notes": [],
-      "result_image": "web/assets/results/CB-004.png",
+      "result_image": "web/assets/results/CB-004.jpg",
       "generation_id": "f3ac03af-b083-48dc-972b-d5dc84b2fc02"
     },
     {
@@ -278,54 +278,54 @@
       "generation_date": "2026-10-06",
       "selection_policy": "first_image",
       "evaluator_model": "GPT-5.6 Sol",
-      "status": "scored",
+      "status": "generated_pending_review",
       "atomic_scores": [
         {
           "description": "恰好两只老虎",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "两只老虎并排且左/右可区分",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "左虎戴蓝色围巾",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "右虎戴红色围巾",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "两只主体均可识别为老虎",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "无第三只老虎",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "无其他猫科动物",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         }
       ],
-      "total_score": 10,
+      "total_score": null,
       "failure_notes": [],
-      "result_image": "web/assets/results/CB-005.png",
+      "result_image": "web/assets/results/CB-005.jpg",
       "generation_id": "498a021a-2a73-4057-9b0c-cad9a4f52dd5"
     },
     {
@@ -338,60 +338,60 @@
       "generation_date": "2026-10-06",
       "selection_policy": "first_image",
       "evaluator_model": "GPT-5.6 Sol",
-      "status": "scored",
+      "status": "generated_pending_review",
       "atomic_scores": [
         {
           "description": "出现且仅出现一只老虎",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "老虎左右前爪各持一根鼓槌",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "鼓槌明确接触或朝向鼓面形成击鼓动作",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "鼓为传统中国大鼓",
           "points": 1.5,
-          "passed": true,
-          "awarded": 1.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "鼓身红色",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "具有金色鼓钉",
           "points": 0.5,
-          "passed": true,
-          "awarded": 0.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "不出现舞狮头",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "老虎、鼓、鼓槌关系清晰无遮挡",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         }
       ],
-      "total_score": 10,
+      "total_score": null,
       "failure_notes": [],
-      "result_image": "web/assets/results/CB-006.png",
+      "result_image": "web/assets/results/CB-006.jpg",
       "generation_id": "8c90ebc4-37ea-421a-867b-79c36924ae09"
     },
     {
@@ -404,66 +404,66 @@
       "generation_date": "2026-10-06",
       "selection_policy": "first_image",
       "evaluator_model": "GPT-5.6 Sol",
-      "status": "scored",
+      "status": "generated_pending_review",
       "atomic_scores": [
         {
           "description": "恰好两只兔子",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "左兔为白色、右兔为灰色",
           "points": 1.5,
-          "passed": true,
-          "awarded": 1.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "茶壶具有青花瓷特征",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "白兔持茶壶并执行倒茶动作",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "被倒入的茶杯为红色",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "茶水方向从茶壶进入红杯",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "灰兔只端空木托盘",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "两只兔子的动作没有互换",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "无其他动物",
           "points": 0.5,
-          "passed": true,
-          "awarded": 0.5
+          "passed": null,
+          "awarded": null
         }
       ],
-      "total_score": 10,
+      "total_score": null,
       "failure_notes": [],
-      "result_image": "web/assets/results/CB-007.png",
+      "result_image": "web/assets/results/CB-007.jpg",
       "generation_id": "0afa1cf0-7380-412d-843e-f2c379e69604"
     },
     {
@@ -476,60 +476,60 @@
       "generation_date": "2026-10-06",
       "selection_policy": "first_image",
       "evaluator_model": "GPT-5.6 Sol",
-      "status": "scored",
+      "status": "generated_pending_review",
       "atomic_scores": [
         {
           "description": "出现一只白兔",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "场景明确具有月宫/满月语境",
           "points": 1.5,
-          "passed": true,
-          "awarded": 1.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "出现月桂树或桂树意象",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "兔子双手握长杵",
           "points": 1.5,
-          "passed": true,
-          "awarded": 1.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "长杵进入石臼形成捣药动作",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "石臼内存在草药",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "整体符合玉兔捣药文化意象",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "不出现胡萝卜干扰",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         }
       ],
-      "total_score": 10,
+      "total_score": null,
       "failure_notes": [],
-      "result_image": "web/assets/results/CB-008.png",
+      "result_image": "web/assets/results/CB-008.jpg",
       "generation_id": "542c4483-7fad-4331-a6bd-867215aec771"
     },
     {
@@ -542,54 +542,54 @@
       "generation_date": "2026-10-06",
       "selection_policy": "first_image",
       "evaluator_model": "GPT-5.6 Sol",
-      "status": "scored",
+      "status": "generated_pending_review",
       "atomic_scores": [
         {
           "description": "主体为单一龙形生物",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "身体细长呈中国龙式长体",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "头部具有中国龙角与须",
           "points": 1.5,
-          "passed": true,
-          "awarded": 1.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "无巨大蝙蝠状翅膀",
           "points": 1.5,
-          "passed": true,
-          "awarded": 1.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "整体视觉可识别为中国龙而非西方龙",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "云海语境自然",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "无第二条西方龙",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         }
       ],
-      "total_score": 10,
+      "total_score": null,
       "failure_notes": [],
-      "result_image": "web/assets/results/CB-009.png",
+      "result_image": "web/assets/results/CB-009.jpg",
       "generation_id": "7dc40262-e1b9-4786-8b68-8a76442a17a8"
     },
     {
@@ -602,66 +602,66 @@
       "generation_date": "2026-10-06",
       "selection_policy": "first_image",
       "evaluator_model": "GPT-5.6 Sol",
-      "status": "scored",
+      "status": "generated_pending_review",
       "atomic_scores": [
         {
           "description": "出现一条中国龙",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "出现一只猴子",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "棋盘可识别为中国象棋而非国际象棋",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "存在红黑两方圆形棋子",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "龙与猴面对面位于桌两侧",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "中国龙正在拿起一枚红棋",
           "points": 1.5,
-          "passed": true,
-          "awarded": 1.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "猴子注视棋盘而非执行其他动作",
           "points": 0.5,
-          "passed": true,
-          "awarded": 0.5
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "棋盘位于双方之间且关系清楚",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "无额外动物",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         }
       ],
-      "total_score": 10,
+      "total_score": null,
       "failure_notes": [],
-      "result_image": "web/assets/results/CB-010.png",
+      "result_image": "web/assets/results/CB-010.jpg",
       "generation_id": "1daf84eb-11a8-4018-ab0d-40a528d5de27"
     },
     {
@@ -674,66 +674,66 @@
       "generation_date": "2026-10-06",
       "selection_policy": "first_image",
       "evaluator_model": "GPT-5.6 Sol",
-      "status": "scored",
+      "status": "generated_pending_review",
       "atomic_scores": [
         {
           "description": "出现一条蛇",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "蛇为绿色",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "蛇明确盘绕在竹子上",
           "points": 2,
-          "passed": true,
-          "awarded": 2
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "蛇和竹子位于画面左侧",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "石灯笼位于画面右侧",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "蛇头朝向石灯笼",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "蛇身体不接触石灯笼",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "背景为中式园林",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         },
         {
           "description": "无其他蛇",
           "points": 1,
-          "passed": true,
-          "awarded": 1
+          "passed": null,
+          "awarded": null
         }
       ],
-      "total_score": 10,
+      "total_score": null,
       "failure_notes": [],
-      "result_image": "web/assets/results/CB-011.png",
+      "result_image": "web/assets/results/CB-011.jpg",
       "generation_id": "ddde7b10-d52a-4580-b485-9d29ce8644f8"
     },
     {
