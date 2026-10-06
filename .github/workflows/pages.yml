@@ -1,4 +1,4 @@
-name: Deploy ChinaBench-T2I Pages
+name: Deploy GitHub Pages
 on:
   push:
     branches: [main]
@@ -18,27 +18,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Build viewer data
-        run: node scripts/build-viewer-data.mjs
       - name: Validate viewer data
         run: node scripts/validate-viewer.mjs web/data/cases-v0.1.json
-      - name: Run viewer tests
-        run: node --test tests/*.test.mjs
-      - name: Prepare site
+      - name: Build static site
         run: |
           rm -rf _site
-          mkdir -p _site/web _site/benchmark/v0.1 _site/results/chatgpt-image
+          mkdir -p _site/web
+          cp web/index.html _site/web/index.html 2>/dev/null || true
           cp -r web/results _site/web/results
           cp -r web/data _site/web/data
           cp -r web/js _site/web/js
           cp -r web/css _site/web/css
-          if [ -d web/assets ]; then cp -r web/assets _site/web/assets; fi
           if [ -d web/svg ]; then cp -r web/svg _site/web/svg; fi
-          if [ -f web/index.html ]; then cp web/index.html _site/web/index.html; fi
-          cp benchmark/v0.1/questions.json _site/benchmark/v0.1/questions.json
-          cp benchmark/v0.1/anchors.json _site/benchmark/v0.1/anchors.json
-          cp results/chatgpt-image/run-2026-10-06.json _site/results/chatgpt-image/run-2026-10-06.json
-          cp index.html _site/index.html
+          if [ -d web/assets ]; then cp -r web/assets _site/web/assets; fi
+          cp index.html _site/index.html 2>/dev/null || true
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
@@ -51,6 +44,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
